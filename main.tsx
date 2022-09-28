@@ -25,7 +25,7 @@ blog({
     { title: "Twitter", url: "https://twitter.com/vvill_call" },
   ],
   lang: "en",
-  dateStyle: "long",
+  // dateStyle: "long",
   cover: "/images/background.svg",
   // background: "#f9f9f9",
   // middlewares: [
