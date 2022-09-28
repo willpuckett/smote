@@ -3,6 +3,7 @@ title:  "Café Work"
 tags: [ mobile, office ]
 cover_html: <img src='images/posts/2019/VPN.webp'/>
 publish_date: 2019-04-25
+snippet: "Having given so much attention to getting my Mac Mini running well in the closet, I realized I'd like to have periodic access to it while out of the house."
 ---
 Having given so much attention to [getting my Mac Mini running well in the closet](/luna), I realized I'd like to have periodic access to it while out of the house. 
 

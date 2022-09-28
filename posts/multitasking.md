@@ -3,6 +3,7 @@ title:  "Multitasking"
 tags: [ ios ]
 cover_html: <img src='images/posts/2019/multi.webp'/>
 publish_date: 2019-02-13
+snippet: "Multitasking is the core component of usability for me in iOS. It lets you work with multiple apps open beside of and/or on top of each other at once. It is essential for inter-app drag-and-drop functionality, and really simplifies things like taking notes from a book or website. Let's take a fly-over."
 ---
 
 *Multitasking* is the core component of usability for me in iOS. It lets you work with multiple apps open beside of and/or on top of each other at once. It is essential for inter-app drag-and-drop functionality, and really simplifies things like taking notes from a book or website. Let's take a fly-over.

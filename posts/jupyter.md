@@ -4,6 +4,7 @@ tags: [ apps, datascience ]
 featured_image_thumbnail: https://github.com/jupyter.png?size=200
 cover_html: <img src='images/posts/2019/compnotebook.webp'/>
 publish_date: 2019-02-15
+snippet: "In the 1980's, industrious young programmers focused on things like setting the VCR clock, or, more ambitiously, having it record a pre-determined channel at a pre-determined time. Genetics program biology. There are large code repositories that define the functions we collectively refer to as our operation systems."
 ---
 
 *To program*. It can mean many things to many people. In the 1980's, industrious young programmers focused on things like setting the VCR clock, or, more ambitiously, having it *record* a pre-determined channel at a pre-determined time. Genetics *program* biology. There are large code repositories that define the functions we collectively refer to as our operation systems. 

@@ -2,6 +2,7 @@
 title:  "Tracking Changes with Visualping.io"
 tags: [ micropost, office ]
 publish_date: 2020-02-18
+snippet: "A couple of months ago, I got really fixated on getting a contact mic by Michael Krzyzaniak. He makes a batch every so often, so I set a reminder to periodically check his website so I could try and catch one while he had them in stock. "
 ---
 
 A couple of months ago, I got really fixated on getting a contact mic by [Michael Krzyzaniak](https://michaelkrzyzaniak.com/). He makes a batch every so often, so I set a reminder to periodically check his website so I could try and catch one while he had them in stock. 

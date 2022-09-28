@@ -3,6 +3,7 @@ title: "Man Cave: Modified"
 tags: [ iot, accessories, office]
 cover_html: <img src='images/posts/2020/mancave.webp'/>
 publish_date: 2017-12-23
+snippet: "Getting warm in San Francisco is almost always a challenge, and even a high rent doesn't guarantee your apartment will include adequate heat. Buildings are old, uninsulated, and drafty—the triple threat for those who like to be able to comfortably walk about their apartment in our overly-valued draconian conditions—if they even have heat."
 ---
 
 Getting warm in San Francisco is almost always a challenge, and even a high rent doesn't guarantee your apartment will include adequate heat. Buildings are old, uninsulated, and drafty—the triple threat for those who like to be able to comfortably walk about their apartment in our overly-valued draconian conditions—if they even *have* heat.

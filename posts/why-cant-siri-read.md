@@ -3,6 +3,7 @@ title: Why Can't Siri Read?
 tags: [ ios, mobile ]
 cover_html: <img src='images/posts/2020/read.webp'/>
 publish_date: 2019-04-19
+snippet: "We've all listened to an audiobook, but did you know Siri can read a book to you? Actually, s/he can read any text to you, and it's super easy to take advantage of."
 ---
 
 We've all listened to an audiobook, but did you know Siri can read a book to you? Actually, s/he can read *any* text to you, and it's super easy to take advantage of.

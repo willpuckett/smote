@@ -4,6 +4,7 @@ tags: [ mobile, accessories ]
 featured_image_thumbnail:
 cover_html: <img src='images/posts/2019/official.webp'/>
 publish_date: 2019-02-12
+snippet: "I needed a lesser bag, to demonstrate how little I needed to carry. I wanted something that felt casual. Something I could throw over a shoulder and be off with. Something that spoke to the sense of unencumberedness that I get from the iPad itself."
 ---
 
 Once I started to realize how much I was going to want my iPad with me, I knew I couldn't just stuff it into any old back pack. I needed a lesser bag, to demonstrate how little I needed to carry. I wanted something that felt *casual*. Something I could throw over a shoulder and be off with. Something that spoke to the sense of unencumberedness that I get from the iPad itself. *I wanted a fanny pack.*

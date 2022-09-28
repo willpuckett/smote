@@ -3,6 +3,7 @@ title:  "As Good as It Git[s]"
 tags: [ ios, apps ]
 cover_html: <img src='images/posts/2019/working-copy.webp'/>
 publish_date: 2019-02-15
+snippet: "My blogging workflow centers around MWeb and a good git client. I was using Code Hub for a little while, but ended up switching to Working Copy. "
 ---
 
 My blogging workflow centers around [MWeb](/editor) and a good git client. I was using [Code Hub](https://itunes.apple.com/us/app/codehub-a-client-for-github/id707173885?mt=8) for a little while, but ended up switching to [Working Copy](https://itunes.apple.com/us/app/working-copy/id896694807?mt=8). 

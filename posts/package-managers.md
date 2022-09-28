@@ -2,6 +2,7 @@
 title:  "Package Managers"
 tags: [ apps, datascience ]
 publish_date: 2018-12-12
+snippet: "A Package Manager is a piece of software that automates the downland and install process for other software. Many operating systems (and some applications!) come with their own package managers. Other operating systems have third party package managers that can be easily installed and drastically expedite and simplify your install processes."
 ---
 
 A *Package Manager* is a piece of software that automates the downland and install process for other software. Many operating systems (and some applications!) come with their own package managers. Other operating systems have third party package managers that can be easily installed and drastically expedite and simplify your install processes.

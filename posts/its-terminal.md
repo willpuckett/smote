@@ -3,6 +3,7 @@ title:  "It's Terminal"
 tags: [ ios, apps ]
 cover_html: <img src='images/posts/2019/snow.gif'/>
 publish_date: 2019-02-14
+snippet: "Blink includes great support for ssh keys, gesture interaction, and a beautiful full screen design that makes you feel like you're in a fully fledged terminal, not some rinky-dink hack job. I can work in Blink comfortably all day. Every other terminal app I've tried on iOS through the years has always felt like something to use as a last resort."
 ---
 
 terminal for your iPad, although purchasing it pre-compiled on the [App Store](https://itunes.apple.com/us/app/blink-shell-mosh-ssh/id1156707581?mt=8) will run you around $20. Your choice. 
