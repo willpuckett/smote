@@ -3,6 +3,7 @@ title:  "Remote Access with SSH Tunnels"
 tags: [ apps, ios, mobile ]
 cover_html: <img src='images/posts/2019/tunnel.webp'/>
 publish_date: 2019-11-05
+snippet: "There's a great trend going on in a couple of iOS apps presently. Apps are providing SSH access to a remote machine via their iOS UI. I'm always obsessing over remote access, and this has allowed me to ditch my VPN altogether."
 ---
 
 There's a great trend going on in a couple of iOS apps presently. Apps are providing *SSH access* to a remote machine via their iOS UI. I'm always obsessing over remote access, and this has allowed me to ditch my VPN altogether. *Good riddance.* 

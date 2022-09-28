@@ -3,6 +3,7 @@ title:  "The State of SFTP"
 tags: [ ios, apps ]
 cover_html: <img src='images/posts/2019/sftp.webp'/>
 publish_date: 2019-11-07
+snippet: "Earlier this week, I covered what I see as an emerging SSH tunnel trend. Seeing on-demand encryption at the app level–without being pushed through anyone else's cloud–is a trend that needs to be growing exponentially right now."
 ---
 
 Earlier this week, I covered what I see as an emerging [SSH tunnel trend](/ssh-tunnel-trend). Seeing *on-demand encryption* at the app level–without being pushed through anyone else's cloud–is a trend that needs to be growing exponentially right now.

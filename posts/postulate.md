@@ -2,6 +2,7 @@
 title:  "Legacy CMS Test Environments"
 tags: [ legacy, web, performance ]
 publish_date: 2020-04-20
+snippet: "Especially since the advent of HTTP2, more and more people have been turning their focus to the *performant web*, the world of the internet that allows pages to feel instantaneous. There's a lot of reason behind this. The numbers vary study by study but the trend is obvious: your users are bouncing, perhaps exponentially, as your page load time increases. "
 ---
 
 Especially since the advent of HTTP2, more and more people have been turning their focus to the *performant web*, the world of the internet that allows pages to feel instantaneous. There's a lot of reason behind this. The numbers vary study by study but the trend is obvious: your users are bouncing, perhaps exponentially, as your page load time increases. Much like the Erie Canal shifted the trade of the Mississippi Valley away from New Orleans (the wealthiest metropolis in the country at the time) to New York, trends in web technology can reroute commerce in the push of a repository. 

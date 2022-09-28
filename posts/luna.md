@@ -3,6 +3,7 @@ title:  "Connecting to the DVD Ripper with Luna, or, the Headless Source Man"
 tags: [ luna, ios ]
 cover_html: <img src='images/posts/2019/luna.webp'/>
 publish_date: 2019-03-07
+snippet: "Last week, I walked into my home office and realized it needed an overhaul. When I first occupied the space, I created a long desk (large enough for two to three people or several projects spread out) with 3 large monitors along it. I was using my desktop to drive it all and had several video capture projects over the winter for which I really appreciated the space."
 ---
 
 Last week, I walked into my home office and realized it needed an overhaul. When I first occupied the space, I created a long desk (large enough for two to three people or several projects spread out) with 3 large monitors along it. I was using my desktop to drive it all and had several video capture projects over the winter for which I really appreciated the space. Now though, my approach has changed so much and I found the weight of it all, well, annoying. I wanted to be able to move more and bring a lighter focus to the room (I was intent making space to work on my [back flips](https://youtu.be/XcWUtDIeAUI) and the desk was in the way). So, I attacked. Taking apart my desk wasn't so much a reversal as an acknowledgment: it had been assembled for a purpose and *achieved* that purpose. Now it was simply time for a *new* purpose. 

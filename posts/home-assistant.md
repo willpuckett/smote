@@ -2,6 +2,7 @@
 title:  "Buttons, Buttons, Who's Got the Buttons?"
 tags: [ iot, apps ]
 publish_date: 2021-06-01
+snippet: "When I was a teenager, I thought it would be really retro to have one of the alarm clocks like the emoji: ⏰. It had the two bells, and an oscillating hammer that would strike them with a fervor appropriate to impending nuclear holocaust. As my life moved forward, I soon realized that (incessant ticking aside), auditory battery didn't start my day on the right foot."
 ---
 
 When I was a teenager, I thought it would be really retro to have one of the alarm clocks like the emoji: ⏰. It had the two bells, and an oscillating hammer that would strike them with a fervor appropriate to impending nuclear holocaust. As my life moved forward, I soon realized that (incessant ticking aside), auditory battery didn't start my day on the right foot. Even if a nuclear holocaust were imminent, why would I want to spend my final moments under such assault?
