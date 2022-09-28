@@ -1,7 +1,7 @@
 ---
 title:  "The Transition"
 tags: [ mobile, ios ]
-cover_html: <img src='images/posts/2019/iPad.jpeg'/>
+cover_html: <img src='images/posts/2019/iPad.webp'/>
 publish_date: 2019-02-11
 ---
 

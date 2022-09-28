@@ -2,7 +2,7 @@
 title:  "It's Official!"
 tags: [ mobile, accessories ]
 featured_image_thumbnail:
-cover_html: <img src='images/posts/2019/official.jpeg'/>
+cover_html: <img src='images/posts/2019/official.webp'/>
 publish_date: 2019-02-12
 ---
 

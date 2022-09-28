@@ -1,6 +1,6 @@
 ---
 title: "Creating a PDF Handler for Apple Notes"
-cover_html: <img src='/images/posts/2020/book.jpeg'/>
+cover_html: <img src='/images/posts/2020/book.webp'/>
 publish_date: 2019-11-16
 ---
 
@@ -16,11 +16,11 @@ So finally today I stopped whining and made a shortcut to deal with it. It takes
 
 First, create a new shortcut. Name it something memorable, then select **Shortcut Input** as the option for **Create note with**.
 
-![Quick and Dirty Shortcut](/images/posts/2020/pdf2notes2.jpeg#wide)
+![Quick and Dirty Shortcut](/images/posts/2020/pdf2notes2.webp#wide)
 
 Next, hit the **...** next to your note title, and tick on **Show in Share Sheet**, tick off **Show in Widget**, and under **Share Sheet Types** select only **PDF**. Hit **Done** and then **Done** again. 
 
-![Configuration](/images/posts/2020/pdf2notes1.jpeg#wide)
+![Configuration](/images/posts/2020/pdf2notes1.webp#wide)
 
 Guess what? You're done. That's all it took.
 

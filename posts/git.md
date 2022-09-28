@@ -1,7 +1,7 @@
 ---
 title:  "As Good as It Git[s]"
 tags: [ ios, apps ]
-cover_html: <img src='images/posts/2019/working-copy.jpeg'/>
+cover_html: <img src='images/posts/2019/working-copy.webp'/>
 publish_date: 2019-02-15
 ---
 

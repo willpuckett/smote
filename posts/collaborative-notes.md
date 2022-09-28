@@ -1,7 +1,7 @@
 ---
 title:  "Collaborative Book Authoring"
 tags: [ ios, book ]
-cover_html: <img src='images/posts/2020/writer.jpeg'/>
+cover_html: <img src='images/posts/2020/writer.webp'/>
 publish_date: 2020-02-27
 ---
 

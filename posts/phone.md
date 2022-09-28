@@ -1,7 +1,7 @@
 ---
 title:  "A Brief Take on Telephony"
 tags: [ office, apps ]
-cover_html: <img src='images/posts/2019/Phone.jpeg'/>
+cover_html: <img src='images/posts/2019/Phone.webp'/>
 publish_date: 2019-03-09
 ---
 

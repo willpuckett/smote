@@ -1,7 +1,7 @@
 ---
 title:  "MWeb: Markdown Editor"
 tags: [ ios, apps ]
-cover_html: <img src='/images/posts/2019/MWeb.jpeg'/>
+cover_html: <img src='/images/posts/2019/MWeb.webp'/>
 publish_date: 2019-02-14
 ---
 

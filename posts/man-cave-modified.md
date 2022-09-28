@@ -1,7 +1,7 @@
 ---
 title: "Man Cave: Modified"
 tags: [ iot, accessories, office]
-cover_html: <img src='images/posts/2020/mancave.jpeg'/>
+cover_html: <img src='images/posts/2020/mancave.webp'/>
 publish_date: 2017-12-23
 ---
 

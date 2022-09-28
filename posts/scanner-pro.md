@@ -1,7 +1,6 @@
 ---
 title:  "Scanner Pro"
 tags: [ apps, office ]
-cover_html: <img src='https://images.techhive.com/images/article/2015/07/scanner-pro-6-documents-100597357-large970.idge.png'/>
 publish_date: 2019-03-28
 ---
 

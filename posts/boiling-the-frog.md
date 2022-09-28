@@ -1,7 +1,7 @@
 ---
 title: Boiling the Frog
 tags: [ ios, apps, book ]
-cover_html: <img src='images/posts/2020/frog.jpeg'/>
+cover_html: <img src='images/posts/2020/frog.webp'/>
 publish_date: 2019-09-04
 ---
 

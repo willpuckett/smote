@@ -1,7 +1,7 @@
 ---
 title:  "Literary Pecking Order"
 tags: [ micropost, mobile ]
-cover_html: <img src='images/posts/2020/pecking.jpeg'/>
+cover_html: <img src='images/posts/2020/pecking.webp'/>
 publish_date: 2019-04-18
 ---
 

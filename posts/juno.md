@@ -1,7 +1,7 @@
 ---
 title:  "Juno"
 tags: [ datascience, apps ]
-cover_html: <img src='images/posts/2019/juno.jpeg'/>
+cover_html: <img src='images/posts/2019/juno.webp'/>
 publish_date: 2019-02-16
 ---
 

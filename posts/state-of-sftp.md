@@ -1,7 +1,7 @@
 ---
 title:  "The State of SFTP"
 tags: [ ios, apps ]
-cover_html: <img src='images/posts/2019/sftp.jpeg'/>
+cover_html: <img src='images/posts/2019/sftp.webp'/>
 publish_date: 2019-11-07
 ---
 

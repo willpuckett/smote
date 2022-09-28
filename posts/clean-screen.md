@@ -1,7 +1,7 @@
 ---
 title:  "Iconoclastic"
 tags: [ micropost, ios ]
-cover_html: <img src='images/posts/2019/icon-free.jpeg'/>
+cover_html: <img src='images/posts/2019/icon-free.webp'/>
 publish_date: 2019-03-09
 ---
 

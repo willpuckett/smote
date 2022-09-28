@@ -1,7 +1,7 @@
 ---
 title:  "Pencils"
 tags: [ accessories ]
-cover_html: <img src='images/posts/2019/styli.jpeg'/>
+cover_html: <img src='images/posts/2019/styli.webp'/>
 publish_date: 2019-02-12
 ---
 

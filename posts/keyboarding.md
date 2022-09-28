@@ -1,7 +1,7 @@
 ---
 title: "A Domino Effect"
 tags: [ basics, book ]
-cover_html: <img src="images/posts/2020/domino.jpeg"/>
+cover_html: <img src="images/posts/2020/domino.webp"/>
 publish_date: 2020-03-15
 ---
 

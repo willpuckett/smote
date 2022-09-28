@@ -1,7 +1,7 @@
 ---
 title:  "Remote Access with SSH Tunnels"
 tags: [ apps, ios, mobile ]
-cover_html: <img src='images/posts/2019/tunnel.jpeg'/>
+cover_html: <img src='images/posts/2019/tunnel.webp'/>
 publish_date: 2019-11-05
 ---
 
@@ -17,7 +17,7 @@ Let's step through setting it up, and walk through some example apps.
 
 ### Turn on *sshd*
 
-![Cranking Up sshd](/images/posts/2019/sharing.jpeg) You've probably already done this, but...
+![Cranking Up sshd](/images/posts/2019/sharing.webp) You've probably already done this, but...
 
 ***sshd*** is the *daemon* (the background running process) that handles incoming SSH requests. It's really easy to initiate in MacOS. Open **Apple Menu > Settings > Sharing**. On the left you'll see a list of possible shares. Click the check box next to **Remote Login** and, congratulations, sshd is running. (While you're here it's not a bad idea to restrict access to a small handful of users, depending on your needs. The fewer the better.)
 

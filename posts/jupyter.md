@@ -2,7 +2,7 @@
 title:  "Computational Notebooks with Jupyter"
 tags: [ apps, datascience ]
 featured_image_thumbnail: https://github.com/jupyter.png?size=200
-cover_html: <img src='images/posts/2019/compnotebook.jpeg'/>
+cover_html: <img src='images/posts/2019/compnotebook.webp'/>
 publish_date: 2019-02-15
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Why Can't Siri Read?
 tags: [ ios, mobile ]
-cover_html: <img src='images/posts/2020/read.jpeg'/>
+cover_html: <img src='images/posts/2020/read.webp'/>
 publish_date: 2019-04-19
 ---
 

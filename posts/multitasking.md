@@ -1,7 +1,7 @@
 ---
 title:  "Multitasking"
 tags: [ ios ]
-cover_html: <img src='images/posts/2019/multi.jpeg'/>
+cover_html: <img src='images/posts/2019/multi.webp'/>
 publish_date: 2019-02-13
 ---
 
@@ -15,7 +15,7 @@ And switch the following settings to **on**:
 * [x]   **Gestures**
 * [x]   **Show Suggested and Recent Apps**
 
-![](images/posts/2019/multitasking.jpeg#wide)
+![](images/posts/2019/multitasking.webp#wide)
 
 Once you've got those four settings powered up, you can have up to 4 windows open in a single workspace. 
 

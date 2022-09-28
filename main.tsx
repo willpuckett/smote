@@ -16,7 +16,7 @@ blog({
   // section: <section>Your custom section</section>,
   // footer: <footer>Your custom footer</footer>,
   // avatar: "https://deno-avatar.deno.dev/avatar/6c464.svg",
-  avatar: "/images/avatar.jpeg",
+  avatar: "/images/avatar.webp",
   avatarClass: "rounded-full",
   author: "Will Puckett",
   links: [

@@ -1,7 +1,7 @@
 ---
 title:  "Connecting to the DVD Ripper with Luna, or, the Headless Source Man"
 tags: [ luna, ios ]
-cover_html: <img src='images/posts/2019/luna.jpeg'/>
+cover_html: <img src='images/posts/2019/luna.webp'/>
 publish_date: 2019-03-07
 ---
 
@@ -51,7 +51,7 @@ I found it helpful to try and minimize these as much as possible, mainly because
 3. *Uncheck* **Put hard disks to sleep when possible**, and **enable power nap**.
 
 
-![Energy Saver Settings](/images/posts/2019/energy-saver.jpeg) These were all pretty essential to keeping the machine on and responding to connections
+![Energy Saver Settings](/images/posts/2019/energy-saver.webp) These were all pretty essential to keeping the machine on and responding to connections
 
 ###### Bluetooth
 
@@ -59,13 +59,13 @@ Open **Bluetooth > Advanced** and *uncheck* **Open Bluetooth Setup Assistant at 
 
 I do not own a wired mouse or keyboard and these settings had caused me **a lot of difficulties** in the past when I was first trying to setup the Mini (and the Mini before it), but with FDE disabled and remote screens enabled, it was time to make the plunge. 
 
-![Bluetooth Settings](/images/posts/2019/bluetooth.jpeg) It was scary to change these! No going back!!
+![Bluetooth Settings](/images/posts/2019/bluetooth.webp) It was scary to change these! No going back!!
 
 ###### Sharing
 
 If you haven't already give your computer a name. Then make sure to turn on either **Screen Sharing** or **Remote Management** for remote screen access, and **Remote Login** to get in with a terminal. 
 
-![Sharing Settings](/images/posts/2019/sharing.jpeg) So much to share
+![Sharing Settings](/images/posts/2019/sharing.webp) So much to share
 
 ###### Users & Groups
 Turn **On** automatic login for your user. I would generally not do this, but with the computer locked in a safe, *what could go wrong?*
