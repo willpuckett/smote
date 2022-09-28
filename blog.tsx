@@ -190,6 +190,7 @@ async function loadContent(blogDirectory: string, isDev: boolean) {
   // Read posts from the current directory and store them in memory.
   const postsDirectory = join(blogDirectory, "posts");
 
+  let post_load_time = 0;
   // TODO(@satyarohith): not efficient for large number of posts.
   for await (
     const entry of walk(postsDirectory)
@@ -199,9 +200,15 @@ async function loadContent(blogDirectory: string, isDev: boolean) {
       await loadPost(postsDirectory, entry.path);
     }
     const t1 = performance.now();
-    console.log(`Load ${entry.name} took ${t1 - t0} milliseconds.`);
+    const entry_performance = t1 - t0;
+    console.log(`Load ${entry.name} took ${entry_performance} milliseconds.`);
+    post_load_time += entry_performance;
+
   }
 
+  console.log(`Total post load time: ${post_load_time}`);
+
+  
   if (isDev) {
     watchForChanges(postsDirectory).catch(() => {});
   }
