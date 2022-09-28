@@ -1,5 +1,5 @@
 ---
-title:  "Clonezilla"
+title: "Clonezilla"
 tags: [ micropost ]
 publish_date: 2019-03-28
 cover_html: <img src="https://sourceforge.net/p/clonezilla/icon?w=180&1513717483" />
