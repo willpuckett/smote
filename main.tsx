@@ -1,13 +1,15 @@
 /** @jsx h */
+// Use this import for local testing
+// import blog, { ga, h, redirects } from "blog"
+// And this one for bleeding edge version
+import blog, { ga, h, redirects } from "https://raw.githubusercontent.com/denoland/deno_blog/main/blog.tsx"
 
-import blog, { ga, redirects, h } from "blog";
-import "https://esm.sh/prismjs@1.27.0/components/prism-typescript?no-check";
-import "https://esm.sh/prismjs@1.27.0/components/prism-bash?no-check";
-import "https://esm.sh/prismjs@1.27.0/components/prism-rust?no-check";
-import "https://esm.sh/prismjs@1.27.0/components/prism-clike?no-check";
-import "https://esm.sh/prismjs@1.27.0/components/prism-vim?no-check";
+import "https://esm.sh/prismjs@1.27.0/components/prism-typescript?no-check"
+import "https://esm.sh/prismjs@1.27.0/components/prism-bash?no-check"
+import "https://esm.sh/prismjs@1.27.0/components/prism-rust?no-check"
+import "https://esm.sh/prismjs@1.27.0/components/prism-clike?no-check"
+import "https://esm.sh/prismjs@1.27.0/components/prism-vim?no-check"
 // import * as unocss from './unocss.ts';
-
 
 blog({
   title: "⚒ Smote.io ⚒",
@@ -29,15 +31,15 @@ blog({
   cover: "/images/background.svg",
   // background: "#f9f9f9",
   // middlewares: [
-    // If you want to set up Google Analytics, paste your GA key here.
-    // ga("UA-XXXXXXXX-X"),
-    // If you want to provide some redirections, you can specify them here,
-    // pathname specified in a key will redirect to pathname in the value.
-    // redirects({
-    //  "/hello_world.html": "/hello_world",
-    // }),
+  // If you want to set up Google Analytics, paste your GA key here.
+  // ga("UA-XXXXXXXX-X"),
+  // If you want to provide some redirections, you can specify them here,
+  // pathname specified in a key will redirect to pathname in the value.
+  // redirects({
+  //  "/hello_world.html": "/hello_world",
+  // }),
   // ]
   // check https://github.com/unocss/unocss
-  // unocss: unocss, 
+  // unocss: unocss,
   favicon: "/images/favicon.ico",
-});
+})

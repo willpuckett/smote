@@ -7,29 +7,29 @@
 /// <reference lib="dom.asynciterable" />
 /// <reference lib="deno.ns" />
 
-import { Fragment, gfm, h } from "./deps.ts";
-import type { BlogState, DateFormat, Post } from "./types.d.ts";
+import { Fragment, gfm, h } from "./deps.ts"
+import type { BlogState, DateFormat, Post } from "./types.d.ts"
 
 const socialAppIcons = new Map([
   ["github.com", IconGithub],
   ["twitter.com", IconTwitter],
   ["instagram.com", IconInstagram],
   ["linkedin.com", IconLinkedin],
-]);
+])
 
 interface IndexProps {
-  state: BlogState;
-  posts: Map<string, Post>;
+  state: BlogState
+  posts: Map<string, Post>
 }
 
 export function Index({ state, posts }: IndexProps) {
-  const postIndex = [];
+  const postIndex = []
   for (const [_key, post] of posts.entries()) {
-    postIndex.push(post);
+    postIndex.push(post)
   }
   postIndex.sort(
     (a, b) => (b.publishDate?.getTime() ?? 0) - (a.publishDate?.getTime() ?? 0),
-  );
+  )
 
   return (
     <div class="home">
@@ -70,16 +70,16 @@ export function Index({ state, posts }: IndexProps) {
             {state.links && (
               <nav class="mt-3 flex gap-2">
                 {state.links.map((link) => {
-                  const url = new URL(link.url);
-                  let Icon = IconExternalLink;
+                  const url = new URL(link.url)
+                  let Icon = IconExternalLink
                   if (url.protocol === "mailto:") {
-                    Icon = IconEmail;
+                    Icon = IconEmail
                   } else {
                     const icon = socialAppIcons.get(
                       url.hostname.replace(/^www\./, ""),
-                    );
+                    )
                     if (icon) {
-                      Icon = icon;
+                      Icon = icon
                     }
                   }
 
@@ -95,7 +95,7 @@ export function Index({ state, posts }: IndexProps) {
                       {link.icon ? link.icon : <Icon />}
                       <Tooltip>{link.title}</Tooltip>
                     </a>
-                  );
+                  )
                 })}
               </nav>
             )}
@@ -118,14 +118,14 @@ export function Index({ state, posts }: IndexProps) {
         {state.footer || <Footer author={state.author} />}
       </div>
     </div>
-  );
+  )
 }
 
 function PostCard(
   { post, dateFormat, lang }: {
-    post: Post;
-    dateFormat?: DateFormat;
-    lang?: string;
+    post: Post
+    dateFormat?: DateFormat
+    lang?: string
   },
 ) {
   return (
@@ -154,18 +154,18 @@ function PostCard(
         </a>
       </p>
     </div>
-  );
+  )
 }
 
 interface PostPageProps {
-  state: BlogState;
-  post: Post;
+  state: BlogState
+  post: Post
 }
 
 export function PostPage({ post, state }: PostPageProps) {
   const html = gfm.render(post.markdown, {
     allowIframes: post.allowIframes,
-  });
+  })
   return (
     <div className={`post ${post.pathname.substring(1)}`}>
       {state.showHeaderOnPostPage && state.header}
@@ -225,7 +225,7 @@ export function PostPage({ post, state }: PostPageProps) {
         {state.footer || <Footer author={state.author} />}
       </div>
     </div>
-  );
+  )
 }
 
 function Footer(props: { author?: string }) {
@@ -250,7 +250,7 @@ function Footer(props: { author?: string }) {
         </a>
       </p>
     </footer>
-  );
+  )
 }
 
 function Tooltip({ children }: { children: string }) {
@@ -278,22 +278,22 @@ function Tooltip({ children }: { children: string }) {
       </span>
       {children}
     </div>
-  );
+  )
 }
 
 function PrettyDate(
   { date, dateFormat }: {
-    date: Date;
-    dateFormat?: DateFormat;
+    date: Date
+    dateFormat?: DateFormat
   },
 ) {
-  let formatted;
+  let formatted
   if (dateFormat) {
-    formatted = dateFormat(date);
+    formatted = dateFormat(date)
   } else {
-    formatted = date.toISOString().split("T")[0];
+    formatted = date.toISOString().split("T")[0]
   }
-  return <time dateTime={date.toISOString()}>{formatted}</time>;
+  return <time dateTime={date.toISOString()}>{formatted}</time>
 }
 
 function Tags({ tags }: { tags?: string[] }) {
@@ -307,7 +307,7 @@ function Tags({ tags }: { tags?: string[] }) {
         ))}
       </section>
     )
-    : null;
+    : null
 }
 
 function IconRssFeed() {
@@ -321,7 +321,7 @@ function IconRssFeed() {
       <path d="M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z" />
       <path d="M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0 5 5 0 00-5-5 1 1 0 01-1-1zM3 15a2 2 0 114 0 2 2 0 01-4 0z" />
     </svg>
-  );
+  )
 }
 
 function IconEmail() {
@@ -337,7 +337,7 @@ function IconEmail() {
         fill="currentColor"
       />
     </svg>
-  );
+  )
 }
 
 function IconExternalLink() {
@@ -353,7 +353,7 @@ function IconExternalLink() {
         fill="currentColor"
       />
     </svg>
-  );
+  )
 }
 
 function IconGithub() {
@@ -369,7 +369,7 @@ function IconGithub() {
         fill="currentColor"
       />
     </svg>
-  );
+  )
 }
 
 function IconTwitter() {
@@ -385,7 +385,7 @@ function IconTwitter() {
         fill="currentColor"
       />
     </svg>
-  );
+  )
 }
 
 function IconInstagram() {
@@ -401,7 +401,7 @@ function IconInstagram() {
         fill="currentColor"
       />
     </svg>
-  );
+  )
 }
 
 function IconLinkedin() {
@@ -417,5 +417,5 @@ function IconLinkedin() {
         fill="currentColor"
       />
     </svg>
-  );
+  )
 }

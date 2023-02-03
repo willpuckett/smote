@@ -25,22 +25,22 @@ import {
   serveDir,
   UnoCSS,
   walk,
-} from "./deps.ts";
-import { Index, PostPage } from "./components.tsx";
-import type { ConnInfo, FeedItem } from "./deps.ts";
+} from "./deps.ts"
+import { Index, PostPage } from "./components.tsx"
+import type { ConnInfo, FeedItem } from "./deps.ts"
 import type {
   BlogContext,
   BlogMiddleware,
   BlogSettings,
   BlogState,
   Post,
-} from "./types.d.ts";
+} from "./types.d.ts"
 
-export { Fragment, h };
+export { Fragment, h }
 
-const IS_DEV = Deno.args.includes("--dev") && "watchFs" in Deno;
-const POSTS = new Map<string, Post>();
-const HMR_SOCKETS: Set<WebSocket> = new Set();
+const IS_DEV = Deno.args.includes("--dev") && "watchFs" in Deno
+const POSTS = new Map<string, Post>()
+const HMR_SOCKETS: Set<WebSocket> = new Set()
 
 const HMR_CLIENT = `let socket;
 let reconnectTimer;
@@ -76,12 +76,12 @@ function hmrSocket(callback) {
     }, 1000);
   });
 }
-`;
+`
 
 function errorHandler(err: unknown) {
   return new Response(`Internal server error: ${(err as Error)?.message}`, {
     status: 500,
-  });
+  })
 }
 
 /** The main function of the library.
@@ -100,33 +100,33 @@ function errorHandler(err: unknown) {
  * ```
  */
 export default async function blog(settings?: BlogSettings) {
-  html.use(UnoCSS(settings?.unocss)); // Load custom unocss module if provided
+  html.use(UnoCSS(settings?.unocss)) // Load custom unocss module if provided
 
-  const url = callsites()[1].getFileName()!;
-  const blogState = await configureBlog(url, IS_DEV, settings);
+  const url = callsites()[1].getFileName()!
+  const blogState = await configureBlog(url, IS_DEV, settings)
 
-  const blogHandler = createBlogHandler(blogState);
+  const blogHandler = createBlogHandler(blogState)
   serve(blogHandler, {
     port: blogState.port,
     hostname: blogState.hostname,
     onError: errorHandler,
-  });
+  })
 }
 
 export function createBlogHandler(state: BlogState) {
-  const inner = handler;
-  const withMiddlewares = composeMiddlewares(state);
+  const inner = handler
+  const withMiddlewares = composeMiddlewares(state)
   return function handler(req: Request, connInfo: ConnInfo) {
     // Redirect requests that end with a trailing slash
     // to their non-trailing slash counterpart.
     // Ex: /about/ -> /about
-    const url = new URL(req.url);
+    const url = new URL(req.url)
     if (url.pathname.length > 1 && url.pathname.endsWith("/")) {
-      url.pathname = url.pathname.slice(0, -1);
-      return Response.redirect(url.href, 307);
+      url.pathname = url.pathname.slice(0, -1)
+      return Response.redirect(url.href, 307)
     }
-    return withMiddlewares(req, connInfo, inner);
-  };
+    return withMiddlewares(req, connInfo, inner)
+  }
 }
 
 function composeMiddlewares(state: BlogState) {
@@ -135,30 +135,30 @@ function composeMiddlewares(state: BlogState) {
     connInfo: ConnInfo,
     inner: (req: Request, ctx: BlogContext) => Promise<Response>,
   ) => {
-    const mws = state.middlewares?.reverse();
+    const mws = state.middlewares?.reverse()
 
-    const handlers: (() => Response | Promise<Response>)[] = [];
+    const handlers: (() => Response | Promise<Response>)[] = []
 
     const ctx = {
       next() {
-        const handler = handlers.shift()!;
-        return Promise.resolve(handler());
+        const handler = handlers.shift()!
+        return Promise.resolve(handler())
       },
       connInfo,
       state,
-    };
+    }
 
     if (mws) {
       for (const mw of mws) {
-        handlers.push(() => mw(req, ctx));
+        handlers.push(() => mw(req, ctx))
       }
     }
 
-    handlers.push(() => inner(req, ctx));
+    handlers.push(() => inner(req, ctx))
 
-    const handler = handlers.shift()!;
-    return handler();
-  };
+    const handler = handlers.shift()!
+    return handler()
+  }
 }
 
 export async function configureBlog(
@@ -166,68 +166,66 @@ export async function configureBlog(
   isDev: boolean,
   settings?: BlogSettings,
 ): Promise<BlogState> {
-  let directory;
+  let directory
 
   try {
-    const blogPath = fromFileUrl(url);
-    directory = dirname(blogPath);
+    const blogPath = fromFileUrl(url)
+    directory = dirname(blogPath)
   } catch (e) {
-    console.error(e);
-    throw new Error("Cannot run blog from a remote URL.");
+    console.error(e)
+    throw new Error("Cannot run blog from a remote URL.")
   }
 
   const state: BlogState = {
     directory,
     ...settings,
-  };
+  }
 
-  await loadContent(directory, isDev);
+  await loadContent(directory, isDev)
 
-  return state;
+  return state
 }
 
 async function loadContent(blogDirectory: string, isDev: boolean) {
   // Read posts from the current directory and store them in memory.
-  const postsDirectory = join(blogDirectory, "posts");
+  const postsDirectory = join(blogDirectory, "posts")
 
-  let post_load_time = 0;
+  let post_load_time = 0
   // TODO(@satyarohith): not efficient for large number of posts.
   for await (
     const entry of walk(postsDirectory)
   ) {
-    const t0 = performance.now();
+    const t0 = performance.now()
     if (entry.isFile && entry.path.endsWith(".md")) {
-      await loadPost(postsDirectory, entry.path);
+      await loadPost(postsDirectory, entry.path)
     }
-    const t1 = performance.now();
-    const entry_performance = t1 - t0;
-    console.log(`Load ${entry.name} took ${entry_performance} milliseconds.`);
-    post_load_time += entry_performance;
-
+    const t1 = performance.now()
+    const entry_performance = t1 - t0
+    console.log(`Load ${entry.name} took ${entry_performance} milliseconds.`)
+    post_load_time += entry_performance
   }
 
-  console.log(`Total post load time: ${post_load_time}`);
+  console.log(`Total post load time: ${post_load_time}`)
 
-  
   if (isDev) {
-    watchForChanges(postsDirectory).catch(() => {});
+    watchForChanges(postsDirectory).catch(() => {})
   }
 }
 
 // Watcher watches for .md file changes and updates the posts.
 async function watchForChanges(postsDirectory: string) {
-  const watcher = Deno.watchFs(postsDirectory);
+  const watcher = Deno.watchFs(postsDirectory)
   for await (const event of watcher) {
     if (event.kind === "modify" || event.kind === "create") {
       for (const path of event.paths) {
         if (path.endsWith(".md")) {
           try {
-            await loadPost(postsDirectory, path);
+            await loadPost(postsDirectory, path)
             HMR_SOCKETS.forEach((socket) => {
-              socket.send("refresh");
-            });
+              socket.send("refresh")
+            })
           } catch (err) {
-            console.error(`loadPost ${path} error:`, err.message);
+            console.error(`loadPost ${path} error:`, err.message)
           }
         }
       }
@@ -236,27 +234,27 @@ async function watchForChanges(postsDirectory: string) {
 }
 
 async function loadPost(postsDirectory: string, path: string) {
-  const contents = await Deno.readTextFile(path);
-  let pathname = "/" + relative(postsDirectory, path);
+  const contents = await Deno.readTextFile(path)
+  let pathname = "/" + relative(postsDirectory, path)
   // Remove .md extension.
-  pathname = pathname.slice(0, -3);
+  pathname = pathname.slice(0, -3)
 
   const { body: content, attrs: _data } = frontMatter<Record<string, unknown>>(
     contents,
-  );
+  )
 
-  const data = recordGetter(_data);
+  const data = recordGetter(_data)
 
   let snippet: string | undefined = data.get("snippet") ??
     data.get("abstract") ??
     data.get("summary") ??
-    data.get("description");
+    data.get("description")
   if (!snippet) {
-    const maybeSnippet = content.split("\n\n")[0];
+    const maybeSnippet = content.split("\n\n")[0]
     if (maybeSnippet) {
-      snippet = removeMarkdown(maybeSnippet.replace("\n", " "));
+      snippet = removeMarkdown(maybeSnippet.replace("\n", " "))
     } else {
-      snippet = "";
+      snippet = ""
     }
   }
 
@@ -277,26 +275,26 @@ async function loadPost(postsDirectory: string, path: string) {
     tags: data.get("tags"),
     allowIframes: data.get("allow_iframes"),
     readTime: readingTime(content),
-  };
-  POSTS.set(pathname, post);
+  }
+  POSTS.set(pathname, post)
 }
 
 export async function handler(
   req: Request,
   ctx: BlogContext,
 ) {
-  const { state: blogState } = ctx;
-  const { pathname, searchParams } = new URL(req.url);
-  const canonicalUrl = blogState.canonicalUrl || new URL(req.url).origin;
+  const { state: blogState } = ctx
+  const { pathname, searchParams } = new URL(req.url)
+  const canonicalUrl = blogState.canonicalUrl || new URL(req.url).origin
   const ogImage = typeof blogState.ogImage !== "string"
     ? blogState.ogImage?.url
-    : blogState.ogImage;
+    : blogState.ogImage
   const twitterCard = typeof blogState.ogImage !== "string"
     ? blogState.ogImage?.twitterCard
-    : "summary_large_image";
+    : "summary_large_image"
 
   if (pathname === "/feed") {
-    return serveRSS(req, blogState, POSTS);
+    return serveRSS(req, blogState, POSTS)
   }
 
   if (IS_DEV) {
@@ -305,17 +303,17 @@ export async function handler(
         headers: {
           "content-type": "application/javascript",
         },
-      });
+      })
     }
 
     if (pathname == "/hmr") {
-      const { response, socket } = Deno.upgradeWebSocket(req);
-      HMR_SOCKETS.add(socket);
+      const { response, socket } = Deno.upgradeWebSocket(req)
+      HMR_SOCKETS.add(socket)
       socket.onclose = () => {
-        HMR_SOCKETS.delete(socket);
-      };
+        HMR_SOCKETS.delete(socket)
+      }
 
-      return response;
+      return response
     }
   }
 
@@ -326,14 +324,14 @@ export async function handler(
     links: [
       { href: canonicalUrl, rel: "canonical" },
     ],
-  };
+  }
 
   if (typeof blogState.favicon === "string") {
     sharedHtmlOptions.links?.push({
       href: blogState.favicon,
       type: "image/x-icon",
       rel: "icon",
-    });
+    })
   } else {
     if (blogState.favicon?.light) {
       sharedHtmlOptions.links?.push({
@@ -341,7 +339,7 @@ export async function handler(
         type: "image/x-icon",
         media: "(prefers-color-scheme:light)",
         rel: "icon",
-      });
+      })
     }
 
     if (blogState.favicon?.dark) {
@@ -350,7 +348,7 @@ export async function handler(
         type: "image/x-icon",
         media: "(prefers-color-scheme:dark)",
         rel: "icon",
-      });
+      })
     }
   }
 
@@ -377,10 +375,10 @@ export async function handler(
           posts={filterPosts(POSTS, searchParams)}
         />
       ),
-    });
+    })
   }
 
-  const post = POSTS.get(pathname);
+  const post = POSTS.get(pathname)
   if (post) {
     return html({
       ...sharedHtmlOptions,
@@ -401,21 +399,21 @@ export async function handler(
         ...(blogState.style ? [blogState.style] : []),
       ],
       body: <PostPage post={post} state={blogState} />,
-    });
+    })
   }
 
-  let fsRoot = blogState.directory;
+  let fsRoot = blogState.directory
   try {
-    await Deno.lstat(join(blogState.directory, "./posts", pathname));
-    fsRoot = join(blogState.directory, "./posts");
+    await Deno.lstat(join(blogState.directory, "./posts", pathname))
+    fsRoot = join(blogState.directory, "./posts")
   } catch (e) {
     if (!(e instanceof Deno.errors.NotFound)) {
-      console.error(e);
-      return new Response(e.message, { status: 500 });
+      console.error(e)
+      return new Response(e.message, { status: 500 })
     }
   }
 
-  return serveDir(req, { fsRoot });
+  return serveDir(req, { fsRoot })
 }
 
 /** Serves the rss/atom feed of the blog. */
@@ -426,9 +424,9 @@ function serveRSS(
 ): Response {
   const url = state.canonicalUrl
     ? new URL(state.canonicalUrl)
-    : new URL(req.url);
-  const origin = url.origin;
-  const copyright = `Copyright ${new Date().getFullYear()} ${origin}`;
+    : new URL(req.url)
+  const origin = url.origin
+  const copyright = `Copyright ${new Date().getFullYear()} ${origin}`
   const feed = new Feed({
     title: state.title ?? "Blog",
     description: state.description,
@@ -441,7 +439,7 @@ function serveRSS(
     feedLinks: {
       atom: `${origin}/feed`,
     },
-  });
+  })
 
   for (const [_key, post] of posts.entries()) {
     const item: FeedItem = {
@@ -456,63 +454,63 @@ function serveRSS(
       image: post.ogImage,
       copyright,
       published: post.publishDate,
-    };
-    feed.addItem(item);
+    }
+    feed.addItem(item)
   }
 
-  const atomFeed = feed.atom1();
+  const atomFeed = feed.atom1()
   return new Response(atomFeed, {
     headers: {
       "content-type": "application/atom+xml; charset=utf-8",
     },
-  });
+  })
 }
 
 export function ga(gaKey: string): BlogMiddleware {
   if (gaKey.length === 0) {
-    throw new Error("GA key cannot be empty.");
+    throw new Error("GA key cannot be empty.")
   }
 
-  const gaReporter = createReporter({ id: gaKey });
+  const gaReporter = createReporter({ id: gaKey })
 
   return async function (
     request: Request,
     ctx: BlogContext,
   ): Promise<Response> {
-    let err: undefined | Error;
-    let res: undefined | Response;
+    let err: undefined | Error
+    let res: undefined | Response
 
-    const start = performance.now();
+    const start = performance.now()
     try {
-      res = await ctx.next() as Response;
+      res = await ctx.next() as Response
     } catch (e) {
-      err = e as Error;
+      err = e as Error
       res = new Response(`Internal server error: ${err.message}`, {
         status: 500,
-      });
+      })
     } finally {
       if (gaReporter) {
-        gaReporter(request, ctx.connInfo, res!, start, err);
+        gaReporter(request, ctx.connInfo, res!, start, err)
       }
     }
-    return res;
-  };
+    return res
+  }
 }
 
 export function redirects(redirectMap: Record<string, string>): BlogMiddleware {
   return async function (req: Request, ctx: BlogContext): Promise<Response> {
-    const { pathname } = new URL(req.url);
+    const { pathname } = new URL(req.url)
 
-    let maybeRedirect = redirectMap[pathname];
+    let maybeRedirect = redirectMap[pathname]
 
     if (!maybeRedirect) {
       // trim leading slash
-      maybeRedirect = redirectMap[pathname.slice(1)];
+      maybeRedirect = redirectMap[pathname.slice(1)]
     }
 
     if (maybeRedirect) {
       if (!maybeRedirect.startsWith("/")) {
-        maybeRedirect = "/" + maybeRedirect;
+        maybeRedirect = "/" + maybeRedirect
       }
 
       return new Response(null, {
@@ -520,42 +518,42 @@ export function redirects(redirectMap: Record<string, string>): BlogMiddleware {
         headers: {
           "location": maybeRedirect,
         },
-      });
+      })
     }
     try {
-      return await ctx.next();
+      return await ctx.next()
     } catch (e) {
-      console.error(e);
+      console.error(e)
       return new Response(`Internal server error: ${e.message}`, {
         status: 500,
-      });
+      })
     }
-  };
+  }
 }
 
 function filterPosts(
   posts: Map<string, Post>,
   searchParams: URLSearchParams,
 ) {
-  const tag = searchParams.get("tag");
+  const tag = searchParams.get("tag")
   if (!tag) {
-    return posts;
+    return posts
   }
   return new Map(
     Array.from(posts.entries()).filter(([, p]) => p.tags?.includes(tag)),
-  );
+  )
 }
 
 function recordGetter(data: Record<string, unknown>) {
   return {
     get<T>(key: string): T | undefined {
-      return data[key] as T;
+      return data[key] as T
     },
-  };
+  }
 }
 
 function readingTime(text: string) {
-  const wpm = 225;
-  const words = text.split(/\s+/).length;
-  return Math.ceil(words / wpm);
+  const wpm = 225
+  const words = text.split(/\s+/).length
+  return Math.ceil(words / wpm)
 }

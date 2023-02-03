@@ -6,16 +6,28 @@ publish_date: 2020-02-27
 snippet: "When I used to use Atom, there was a great collaborative writing tool called Teletype. It allowed multiple people to be editing the same files at the same time. I've been working on a book lately and wanted to get another one in progress with a group of authors, so I tried to find something that would duplicate Teletype's functionality iThonically."
 ---
 
-When I used to use [Atom](https://atom.io), there was a great collaborative writing tool called [Teletype](https://teletype.atom.io/). It allowed multiple people to be editing the same files at the same time. I've been working on a book lately and wanted to get another one in progress with a group of authors, so I tried to find something that would duplicate Teletype's functionality iThonically.
+When I used to use [Atom](https://atom.io), there was a great collaborative
+writing tool called [Teletype](https://teletype.atom.io/). It allowed multiple
+people to be editing the same files at the same time. I've been working on a
+book lately and wanted to get another one in progress with a group of authors,
+so I tried to find something that would duplicate Teletype's functionality
+iThonically.
 
-There weren't a lot of options. Both [HackMD](http://hackmd.io) and [StackEdit](https://stackedit.io/) seemed decently put together, worked nicely in the browser, but I wanted a stand alone app that would load quickly so I could jot ideas on the train/bus as well as have longer sessions at home and on the go. I wanted to be able to collaboratively edit a bunch of Markdown documents and then build them into an ePub.
+There weren't a lot of options. Both [HackMD](http://hackmd.io) and
+[StackEdit](https://stackedit.io/) seemed decently put together, worked nicely
+in the browser, but I wanted a stand alone app that would load quickly so I
+could jot ideas on the train/bus as well as have longer sessions at home and on
+the go. I wanted to be able to collaboratively edit a bunch of Markdown
+documents and then build them into an ePub.
 
 The only option was Apple Notes.
 
-So, the Saturday morning before last, I sat around for a half an hour and patched a [Pandoc](https://pandoc.org) build script together. This takes a folder of Notes and pulls it out of Apple Notes in plaintext, then makes a table of contents out of the Markdown chapters, then adds the front matter.
+So, the Saturday morning before last, I sat around for a half an hour and
+patched a [Pandoc](https://pandoc.org) build script together. This takes a
+folder of Notes and pulls it out of Apple Notes in plaintext, then makes a table
+of contents out of the Markdown chapters, then adds the front matter.
 
 ## File and Directory Structure
-
 
 You'll need to use a folder structure something like:
 
@@ -30,7 +42,9 @@ mybook/
     publish.sh
 ```
 
-I have modified Pandoc templates to control the Table of Contents Page, but you may or may not find that necessary. In case you do, here are the two templates I reference later in the publish script. Place them in the templates directory.
+I have modified Pandoc templates to control the Table of Contents Page, but you
+may or may not find that necessary. In case you do, here are the two templates I
+reference later in the publish script. Place them in the templates directory.
 
 #### gfm.template
 
@@ -107,7 +121,6 @@ $endif$
 
 I like to place this script in the root of my project directory for easy access.
 
-
 ```bash
 #!/bin/bash
 
@@ -172,9 +185,12 @@ sed -e /Contents/,/-----/$'s/  - \[/\\\n\[/' toc.chapters.md > debulleted.toc.ch
 rm *.md
 ```
 
+With the build script in place, you're ready to assemble the
+[Markdown](https://www.markdowntutorial.com/) you've written in Apple Notes into
+an epub. I like to make a Shortcut to run the build script and leave it in my
+shortcuts widget so I can just tap on it from the home screen of my iPad.
 
-With the build script in place, you're ready to assemble the [Markdown](https://www.markdowntutorial.com/) you've written in Apple Notes into an epub. I like to make a Shortcut to run the build script and leave it in my shortcuts widget so I can just tap on it from the home screen of my iPad. 
+All that's left to do is share the Apple Notes with your collaborators, and
+you're off to the races!
 
-All that's left to do is share the Apple Notes with your collaborators, and you're off to the races!
-
- Happy writing.
+Happy writing.
