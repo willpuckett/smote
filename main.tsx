@@ -1,8 +1,8 @@
 /** @jsx h */
 // Use this import for local testing
-// import blog, { ga, h, redirects } from "blog"
+import blog, { ga, h, redirects } from "./blog.tsx"
 // And this one for bleeding edge version
-import blog, { ga, h, redirects } from "https://raw.githubusercontent.com/denoland/deno_blog/main/blog.tsx"
+// import blog, { ga, h, redirects } from "https://raw.githubusercontent.com/denoland/deno_blog/main/blog.tsx"
 
 import "https://esm.sh/prismjs@1.27.0/components/prism-typescript?no-check"
 import "https://esm.sh/prismjs@1.27.0/components/prism-bash?no-check"

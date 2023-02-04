@@ -190,20 +190,30 @@ async function loadContent(blogDirectory: string, isDev: boolean) {
   // Read posts from the current directory and store them in memory.
   const postsDirectory = join(blogDirectory, "posts")
 
+const loadingPromises: Promise<void>[] = [];
+
   let post_load_time = 0
   // TODO(@satyarohith): not efficient for large number of posts.
+  const t0 = performance.now()
+  
   for await (
     const entry of walk(postsDirectory)
   ) {
-    const t0 = performance.now()
+    const t2 = performance.now()
     if (entry.isFile && entry.path.endsWith(".md")) {
-      await loadPost(postsDirectory, entry.path)
+
+          loadingPromises.push(loadPost(postsDirectory, entry.path));
+
+      // await loadPost(postsDirectory, entry.path)
+
     }
-    const t1 = performance.now()
-    const entry_performance = t1 - t0
+    const t3 = performance.now()
+    const entry_performance = t3 - t2
     console.log(`Load ${entry.name} took ${entry_performance} milliseconds.`)
-    post_load_time += entry_performance
   }
+  await Promise.all(loadingPromises)
+  const t1 = performance.now()
+  post_load_time = t1 - t0
 
   console.log(`Total post load time: ${post_load_time}`)
 
