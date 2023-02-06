@@ -1,5 +1,5 @@
 /** @jsx h */
-import blog, { ga, h, redirects } from "https://raw.githubusercontent.com/denoland/deno_blog/main/blog.tsx"
+import blog, { ga, h, redirects } from "https://raw.githubusercontent.com/willpuckett/deno_blog/main/blog.tsx"
 
 import "https://esm.sh/prismjs@1.27.0/components/prism-typescript?no-check"
 import "https://esm.sh/prismjs@1.27.0/components/prism-bash?no-check"
