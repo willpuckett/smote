@@ -1,6 +1,6 @@
 ---
 title:  "Highlighting"
-tags: [ micropost, mobile ]
+tags: [ micropost, deno, deploy, playground  ]
 publish_date: 2022-09-28
 
 ---
