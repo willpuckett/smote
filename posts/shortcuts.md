@@ -28,38 +28,6 @@ This was a little off putting (and broke my hopes of having my AppleTV come on
 as an alarm), but even with such failures, the Shortcuts app has become
 invaluable to me.
 
-## The Shortcuts Widget
-
-You can display your favorite shortcuts in the widget on your home screen. This
-makes repetitive things super accessible, and can help you get things that don't
-have good widgets (Hue) more accessible. I have shortcuts for several of my
-favorite light scenes in my Shortcuts Widget that allow me to quickly change
-them without having to talk with Siri or deal with getting into the Hue app and
-waiting for it to connect to the bridge and load.
-
-## Things That Don't Need to Be Apps
-
-I don't want every function to have a button on my home screen. As a matter of
-fact, I try to keep the home screen as [uncluttered](/clean-screen) as possible.
-Being able to add image processing quick and dirties is pretty grand. One of my
-favorites is [Invert Image](https://routinehub.co/shortcut/1629) by @keveridge.
-I use this a lot in my illustration image pipeline.
-
-## Expense Reports
-
-I try to not make a habit of picking up paper. I've found through the years it
-keeps me from ending up with little crumpled tidbits that occupy my dressing
-area and come out of the laundry in tidbits in my pocket. To that end, I also
-routinely archive any images I want to keep out of my photo stream and into
-iCloud albums. That way, my photo stream becomes more of an image inbox.
-
-When I have expensable receipts, I simply photograph them and toss them. Using
-the
-[Send Receipt Shortcut](https://www.icloud.com/shortcuts/8714cb63986340e285dd79135dae116a),
-I can quickly assemble them into an email an downstream for processing by the
-rest of the team. I make it a point to finish my expense reports before I get
-off the train coming home. _Send Receipts_ makes that goal possible.
-
 ## Run Script Over SSH
 
 Of course my favorite shortcut is really just a launching pad for anything else
@@ -93,9 +61,3 @@ been abandoned, and then routes anything it has to say about anything to the
 abyss. It keeps persnickety commands (ffmpeg) happy. Notably, the **screen**
 command wasn't working properly in an earlier MacOS version, but does as of late
 last summer (ish).
-
-## Smiling Faces
-
-There's a lot more you can do with Shortcuts. We'll get into a few nuttier,
-glitter examples next week but until then have fun exploring and making
-exceptionally useful things!

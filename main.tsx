@@ -1,11 +1,12 @@
 /** @jsx h */
-import blog, { ga, h, redirects } from "https://raw.githubusercontent.com/willpuckett/deno_blog/main/blog.tsx"
+import blog, { h } from "deno_blog/main/blog.tsx"
 
-import "https://esm.sh/prismjs@1.27.0/components/prism-typescript?no-check"
-import "https://esm.sh/prismjs@1.27.0/components/prism-bash?no-check"
-import "https://esm.sh/prismjs@1.27.0/components/prism-rust?no-check"
-import "https://esm.sh/prismjs@1.27.0/components/prism-clike?no-check"
-import "https://esm.sh/prismjs@1.27.0/components/prism-vim?no-check"
+import "prismjs/components/prism-typescript"
+import "prismjs/components/prism-bash"
+import "prismjs/components/prism-rust"
+import "prismjs/components/prism-clike"
+import "prismjs/components/prism-vim"
+import "prismjs/components/prism-graphql"
 // import * as unocss from './unocss.ts';
 
 blog({
@@ -14,7 +15,6 @@ blog({
   // header: <header>Your custom header</header>,
   // section: <section>Your custom section</section>,
   // footer: <footer>Your custom footer</footer>,
-  // avatar: "https://deno-avatar.deno.dev/avatar/6c464.svg",
   avatar: "/images/avatar.webp",
   avatarClass: "rounded-full",
   author: "Will Puckett",
@@ -24,9 +24,7 @@ blog({
     { title: "Twitter", url: "https://twitter.com/vvill_call" },
   ],
   lang: "en",
-  // dateStyle: "long",
   cover: "/images/background.svg",
-  // background: "#f9f9f9",
   // middlewares: [
   // If you want to set up Google Analytics, paste your GA key here.
   // ga("UA-XXXXXXXX-X"),
@@ -37,6 +35,34 @@ blog({
   // }),
   // ]
   // check https://github.com/unocss/unocss
-  // unocss: unocss,
   favicon: "/images/favicon.ico",
+  /** Color of the text that goes on the background cover. */
+  coverTextColor: "dimgray",
+  /** Whether to show the header on post pages */
+  showHeaderOnPostPage: true,
+  /** Custom CSS */
+  // style ?: string;
+  /** URL to open graph image. Can be relative. */
+  // ogImage ?: string | {
+  //   url: string;
+  //   twitterCard: "summary" | "summary_large_image" | "app" | "player";
+  // };
+  /** The ISO code of the language the blog is in */
+  dateFormat: (d) =>
+    d.toLocaleString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      timeZone: "PST",
+    }),
+  /** The canonical URL of the blog */
+  // canonicalUrl ?: string;
+  /** UnoCSS configuration */
+  // unocss ?: UnoConfig;
+  /** Color scheme */
+  theme: "auto",
+  /**
+  /** Whether to display readtime or not */
+  readtime: true,
 })

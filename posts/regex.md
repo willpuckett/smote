@@ -6,4 +6,4 @@ snippet: "This is an awesome RegEx review. Being sharp with RegEx's is ultra ðŸ¤
 ---
 
 This is an awesome [RegEx review](https://regexone.com/). Being sharp with
-RegEx's is _ultra_ ðŸ¤š.
+RegEx's is _ultra_.

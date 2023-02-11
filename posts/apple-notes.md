@@ -35,8 +35,6 @@ only **PDF**. Hit **Done** and then **Done** again.
 
 ![Configuration](/images/posts/2020/pdf2notes1.webp#wide)
 
-Guess what? You're done. That's all it took.
-
 If you don't feel like going through all of that, you can use
 [this link](https://www.icloud.com/shortcuts/43a23a0d2cfb4d8fa0b2bbc40eead342)
 and it should open right up for you.

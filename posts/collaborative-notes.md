@@ -189,8 +189,3 @@ With the build script in place, you're ready to assemble the
 [Markdown](https://www.markdowntutorial.com/) you've written in Apple Notes into
 an epub. I like to make a Shortcut to run the build script and leave it in my
 shortcuts widget so I can just tap on it from the home screen of my iPad.
-
-All that's left to do is share the Apple Notes with your collaborators, and
-you're off to the races!
-
-Happy writing.
