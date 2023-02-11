@@ -2,7 +2,7 @@
 title:  "Responsive Bots"
 tags: [ micropost, iot ]
 publish_date: 2020-03-30
-snippet: "Poking around the web, I happened upon this super fun conceptfor making easy bots that respond to tidbits of web information."
+
 ---
 
 Poking around the web, I happened upon this

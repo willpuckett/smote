@@ -2,7 +2,7 @@
 title: "Typelording with Fauna and Fresh"
 tags: [ deno, fresh, fauna, webdev ]
 publish_date: 2023-02-10
-snippet: "A few weeks ago, I started playing with using Fauna along with the Fresh framework. The purportedly global nature of Fauna seems to be a natural paring with Deno deploy. I'm not a database person, and I want someone to do it for me, which Fauna kind of does well."
+
 ---
 
 A few weeks ago, I started playing with using Fauna along with the Fresh

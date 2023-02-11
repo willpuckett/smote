@@ -3,7 +3,7 @@ title:  "Collaborative Book Authoring"
 tags: [ ios, book ]
 cover_html: <img src='images/posts/2020/writer.webp'/>
 publish_date: 2020-02-27
-snippet: "When I used to use Atom, there was a great collaborative writing tool called Teletype. It allowed multiple people to be editing the same files at the same time. I've been working on a book lately and wanted to get another one in progress with a group of authors, so I tried to find something that would duplicate Teletype's functionality iThonically."
+
 ---
 
 When I used to use [Atom](https://atom.io), there was a great collaborative

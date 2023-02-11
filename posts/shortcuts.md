@@ -3,7 +3,7 @@ title:  "Waking Up with Apple Shortcuts"
 tags: [ iot, apps, ios ]
 publish_date: 2019-12-04
 cover_html: <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/0d/eb/8b/0deb8bb8-3a97-94c9-88ee-56bddfe77325/source/512x512bb.jpg" />
-snippet: "I'm not really an auditory alarm kind of guy. I'll use them on the road when I have to, but I've realized I'm much more responsive to light in the mornings than sound. I have a bunch of Hue lights in my bedroom."
+
 ---
 
 I'm not really an auditory alarm kind of guy. I'll use them on the road when I

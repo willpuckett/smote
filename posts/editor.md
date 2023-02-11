@@ -3,7 +3,7 @@ title:  "MWeb: Markdown Editor"
 tags: [ ios, apps ]
 cover_html: <img src='/images/posts/2019/MWeb.webp'/>
 publish_date: 2019-02-14
-snippet: "Coming from desktop, I thought I would never find a really functional Markdown editor in iOS. I had tried a litany of editors on iOS in the past, and had never found one that I was really comfortable with. Nothing compared to Atom and its endless extensibility for me. "
+
 ---
 
 Coming from desktop, I thought I would never find a really functional Markdown

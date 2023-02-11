@@ -2,7 +2,7 @@
 title:  "Video Bookmarklets"
 tags: [ micropost, ios ]
 publish_date: 2019-04-14
-snippet: "I was having some difficulty the other day binge watching videos in the youtube app. Some apps don't expose the WebKit buttons for full screen and picture-in-a-picture video."
+
 ---
 
 I was having some difficulty the other day binge watching videos in the youtube

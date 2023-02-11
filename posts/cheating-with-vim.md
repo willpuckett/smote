@@ -3,7 +3,7 @@ title:  "Cheating with Vim"
 tags: [ basics, micropost ]
 cover_html: <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/256px-Vimlogo.svg.png' />
 publish_date: 2020-04-12
-snippet: "Last week, I decided to have an affair with the text editor of my youth: Vim. No matter how thoroughly I work to assimilate a command's syntax, I always have to refresh after some time away."
+
 ---
 
 Last week, I decided to have an affair with the text editor of my youth:
