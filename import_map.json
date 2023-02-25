@@ -1,7 +1,7 @@
 {
   "imports": {
     "deno_blog/": "https://raw.githubusercontent.com/willpuckett/deno_blog/",
-    "Unocss": "https://deno.land/x/htm@0.0.10/plugins.ts",
+    "Unocss": "https://deno.land/x/htm@0.1.4/plugins.ts",
     "prismjs/": "https://esm.sh/prismjs@1.29.0/"
   }
 }
