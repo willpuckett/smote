@@ -21,13 +21,13 @@ I was able to successfully adapt Akif Heren's [akifkeyboard](https://github.com/
 
 Ultimately, I happened on a small iOS app called [xKeyboard - Custom Keyboard](https://apps.apple.com/us/app/xkeyboard-custom-keyboard/id1440245962) by 煦 张. I was able to create layouts for both phone and tablet easily, including portrait and landscape variations. 
 
-![Engram on iPhone](../images/posts/2023/engram2.webp)
+![Engram on iPhone](https://smote.io/images/posts/2023/engram2.webp)
 
-![Engram on iPhone](../images/posts/2023/engram3.webp)
+![Engram on iPhone](https://smote.io/images/posts/2023/engram3.webp)
 
 xKeyboard has a feature called "candidate keys" that allows you to press a key and get additional functionality. I'm currently using that to collapse the center punctuation column on portrait iPhone view. Things are fitting nicely on phone, and very well on iPad. It's still very much a work in progress, but I'm posting in case anyone finds it helpful. You can try it out [here](https://smote.io/static/Engram.xkeyboard). That will download a file you'll need to import into (the paid version of) xKeyboard on either iOS or iPadOS. 
 
-![Engram on iPad](../images/posts/2023/engram1.webp)
+![Engram on iPad](https://smote.io/images/posts/2023/engram1.webp)
 
 
 I think I should be able to create an x-callback-url for the `.xkeyboard` file that will take it directly into the app, but I haven't been able to find it yet...
