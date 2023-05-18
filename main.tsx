@@ -1,5 +1,5 @@
 /** @jsx h */
-import blog, { h } from "deno_blog/main/blog.tsx"
+import blog, { h } from "deno_blog/blog.tsx"
 
 import "prismjs/components/prism-typescript"
 import "prismjs/components/prism-bash"
