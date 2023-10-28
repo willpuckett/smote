@@ -1,7 +1,0 @@
-{
-  "imports": {
-    "deno_blog/": "https://deno.land/x/blog/",
-    "Unocss": "https://deno.land/x/htm@0.1.4/plugins.ts",
-    "prismjs/": "https://esm.sh/prismjs@1.29.0/"
-  }
-}
