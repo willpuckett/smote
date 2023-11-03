@@ -1,9 +1,0 @@
----
-title:  "Highlighting"
-tags: [ micropost, deno, deploy, playground  ]
-publish_date: 2022-09-28
-
----
-
-I've been having a _great_ time with Deno deploy lately. Here's a little code
-highlighter I made <https://dash.deno.com/playground/highlight> yesterday.

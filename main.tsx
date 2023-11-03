@@ -1,30 +1,27 @@
 /** @jsx h */
-import blog, { h } from "deno_blog/blog.tsx"
+import blog, { h } from 'deno_blog/blog.tsx'
 
-import "prismjs/components/prism-typescript"
-import "prismjs/components/prism-bash"
-import "prismjs/components/prism-rust"
-import "prismjs/components/prism-clike"
-import "prismjs/components/prism-vim"
-import "prismjs/components/prism-graphql"
+import 'prismjs/components/prism-typescript'
+import 'prismjs/components/prism-bash'
+import 'prismjs/components/prism-clike'
+import 'prismjs/components/prism-vim'
 // import * as unocss from './unocss.ts';
 
 blog({
-  title: "⚒ Smote.io ⚒",
-  description: "The Voice of the Synthetic Minority.",
+  title: '𐡷 Smote.io 𐡸',
+  description: 'Make the Foray',
   // header: <header>Your custom header</header>,
   // section: <section>Your custom section</section>,
   // footer: <footer>Your custom footer</footer>,
-  avatar: "/images/avatar.webp",
-  avatarClass: "rounded-full",
-  author: "Will Puckett",
+  avatar: '/images/avatar.webp',
+  avatarClass: 'rounded-full',
+  author: 'Will Puckett',
   links: [
-    { title: "Email", url: "mailto:willpuckett@gmail.com" },
-    { title: "GitHub", url: "https://github.com/willpuckett" },
-    { title: "Twitter", url: "https://twitter.com/vvill_call" },
+    { title: 'Email', url: 'mailto:willpuckett@gmail.com' },
+    { title: 'GitHub', url: 'https://github.com/willpuckett' },
   ],
-  lang: "en",
-  cover: "/images/background.svg",
+  lang: 'en',
+  cover: '/images/background.svg',
   // middlewares: [
   // If you want to set up Google Analytics, paste your GA key here.
   // ga("UA-XXXXXXXX-X"),
@@ -35,9 +32,9 @@ blog({
   // }),
   // ]
   // check https://github.com/unocss/unocss
-  favicon: "/images/favicon.ico",
+  favicon: '/images/favicon.ico',
   /** Color of the text that goes on the background cover. */
-  coverTextColor: "dimgray",
+  coverTextColor: 'dimgray',
   /** Whether to show the header on post pages */
   showHeaderOnPostPage: true,
   /** Custom CSS */
@@ -49,19 +46,19 @@ blog({
   // };
   /** The ISO code of the language the blog is in */
   dateFormat: (d) =>
-    d.toLocaleString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      timeZone: "PST",
+    d.toLocaleString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'PST',
     }),
   /** The canonical URL of the blog */
   // canonicalUrl ?: string;
   /** UnoCSS configuration */
   // unocss ?: UnoConfig;
   /** Color scheme */
-  theme: "auto",
+  theme: 'auto',
   /**
   /** Whether to display readtime or not */
   readtime: true,

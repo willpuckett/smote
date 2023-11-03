@@ -1,20 +1,22 @@
 // Copyright 2022 the Deno authors. All rights reserved. MIT license.
 
-import type { ConnInfo, UnoConfig, VNode } from "deno_blog/deps.ts"
+type ConnInfo = import('deno_blog/deps.ts').ConnInfo
+type UnoConfig = import('deno_blog/deps.ts').UnoConfig
+type VNode = import('deno_blog/deps.ts').VNode
 
-export interface BlogContext {
+declare interface BlogContext {
   state: BlogState
   connInfo: ConnInfo
   next: () => Promise<Response>
 }
 
-export interface BlogMiddleware {
+declare interface BlogMiddleware {
   (req: Request, ctx: BlogContext): Promise<Response>
 }
 
 type DateFormat = (date: Date) => string
 
-export interface BlogSettings {
+declare interface BlogSettings {
   /** The blog title */
   title?: string
   /** The blog description */
@@ -38,7 +40,7 @@ export interface BlogSettings {
     /** The element to use as the icon of the link */
     icon?: VNode
     /** The link target */
-    target?: "_self" | "_blank" | "_parent" | "_top"
+    target?: '_self' | '_blank' | '_parent' | '_top'
   }[]
   /** The element ot use as header */
   header?: VNode
@@ -53,7 +55,7 @@ export interface BlogSettings {
   /** URL to open graph image. Can be relative. */
   ogImage?: string | {
     url: string
-    twitterCard: "summary" | "summary_large_image" | "app" | "player"
+    twitterCard: 'summary' | 'summary_large_image' | 'app' | 'player'
   }
   /** Functions that are called before rendering and can modify the content or make other changes. */
   middlewares?: BlogMiddleware[]
@@ -66,7 +68,7 @@ export interface BlogSettings {
   /** UnoCSS configuration */
   unocss?: UnoConfig
   /** Color scheme */
-  theme?: "dark" | "light" | "auto"
+  theme?: 'dark' | 'light' | 'auto'
   /**
    * URL to favicon. Can be relative.
    * Supports dark and light mode variants through "prefers-color-scheme".
@@ -80,12 +82,12 @@ export interface BlogSettings {
   readtime?: boolean
 }
 
-export interface BlogState extends BlogSettings {
+declare interface BlogState extends BlogSettings {
   directory: string
 }
 
 /** Represents a Post in the Blog. */
-export interface Post {
+declare interface Post {
   pathname: string
   markdown: string
   title: string

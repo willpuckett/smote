@@ -1,7 +1,6 @@
 ---
 title:  "Cheating with Vim"
-tags: [ basics, micropost ]
-cover_html: <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/256px-Vimlogo.svg.png' />
+tags: [ keebs ]
 publish_date: 2020-04-12
 
 ---
@@ -53,5 +52,3 @@ rediscover the joys of _not being able to find a limit_ to your text editor, and
 the wide, wide, wide wide wide world of Vim. After all, what other editor lets
 you play [Killer Sheep](https://github.com/vim/killersheep) when you need a
 distraction?
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UqvvRxqu_eg" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

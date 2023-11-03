@@ -1,34 +1,21 @@
 ---
 title:  "MWeb: Markdown Editor"
-tags: [ ios, apps ]
-cover_html: <img src='/images/posts/2019/MWeb.webp'/>
+tags: [ ios, keebs ]
+cover_html: <img src='/images/MWeb.webp'/>
 publish_date: 2019-02-14
 
 ---
 
-Coming from desktop, I thought I would never find a really functional Markdown
-editor in iOS (if you're unfamiliar with Markdown,
-[try this link](https://www.markdowntutorial.com/)). I had tried a litany of
-editors on iOS in the past, and had never found one that I was really
-comfortable with. Nothing compared to [Atom](https://atom.io) and its endless
-extensibility for me. I was even more off put by how many editors charged
-subscription fees to use instead of a flat app fee (_come on Ulysses and
-Bear!_).
-
-A few weeks ago, I happened onto **MWeb**
-[[App Store](https://itunes.apple.com/us/app/mweb-powerful-markdown-app/id1183407767?mt=8)]
-[[Developer's Page](https://www.mweb.im/introducing-mweb-for-ios.html)] and
-everything changed. MWeb has a great preview, a good library that integrates
-well with its desktop version, and allows easy editing of files in external
-folders, including the git repository that hosts this site.
+A few weeks ago, I happened onto
+[**MWeb**](https://www.mweb.im/introducing-mweb-for-ios.html) and everything
+changed. MWeb has a great preview, a good library that integrates well with its
+desktop version, and allows easy editing of files in external folders, including
+the git repository that hosts this site.
 
 The support for GFM tables is awesome. The LaTeX support is awesome. It does a
 great job with inline flow chart graphics like
 [Mermaid](https://mermaidjs.github.io/). The Table of Contents feature works
 really well as well.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/m3dCnGVGFZQ" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<small> Here's the developer's (rather lengthy) introductory video for the desktop version.</small>
 
 ### Page Breaks
 

@@ -1,15 +1,21 @@
 {
   "tasks": {
     "start": "deno run --allow-net --allow-read --allow-env --watch main.tsx --dev",
-    "serve": "deno run --allow-net --allow-read --allow-env --no-check main.tsx"
+    "bg": "deno task start &> /dev/null",
+    "prep": "deno fmt && deno lint && deno check main.tsx",
+    "udd": "deno run -A https://deno.land/x/udd/main.ts --dry-run deno.jsonc"
   },
   "imports": {
-  	"deno_blog/": "https://pax.deno.dev/denoland/deno_blog/",
-    // "Unocss": "https://deno.land/x/htm@0.2.1/plugins.ts",
+    "deno_blog/": "https://pax.deno.dev/denoland/deno_blog/",
     "prismjs/": "https://esm.sh/prismjs@1.29.0/"
   },
+  "compilerOptions": {
+    "types": [
+      "./types.d.ts"
+    ]
+  },
   "fmt": {
-      "semiColons": false,
-      "singleQuote": true
+    "semiColons": false,
+    "singleQuote": true
   }
 }
