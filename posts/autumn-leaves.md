@@ -77,7 +77,48 @@ implement them on my laptop. I wanted to achieve as much parity as possible as I
 went back and forth. I had managed to partially implement them by the end of
 June, and I felt close. Even though I still needed the modifier keys
 occasionally (mainly for multiple modifier key combos), I had a few that were
-starting to open up and be pretty much available for other keys.
+starting to open up and be pretty much available for other keys. I liked using karabiner.ts. It helped me stew down a lot of repetition when I used the spread operator with the `withMapper` function:
+
+```ts
+import {
+  FromKeyParam,
+  LayerKeyParam,
+  map,
+  ModifierParam,
+  rule,
+  simlayer,
+  withMapper,
+  withModifier,
+  writeToProfile,
+} from 'karabinerts'
+import { engram, engram_left, engram_right } from './engram.ts'
+
+const qhr: FromKeyParam[] = ['a', 's', 'd', 'f', 'j', 'k', 'l', ';']
+const mods = ['‹⌃', '‹⌥', '‹⌘', '‹⇧', '›⇧', '›⌘', '›⌥', '›⌃']
+
+  writeToProfile('karabiner.ts', [
+    ...(qhr.map((key, i) =>
+      simlayer(key as LayerKeyParam, mods[i])
+        .manipulators([
+          withMapper(i < 4 ? engram_right : engram_left)((k) =>
+            map(k.from).to(k.to, mods[i] as ModifierParam)
+          ),
+        ])
+    )),
+
+    // Engram base layer
+    rule('engram').manipulators([
+      withModifier('optionalAny')([
+        withMapper(engram)((k) => map(k.from).to(k.to)),
+      ]),
+    ]),
+  ], {
+    'simlayer.threshold_milliseconds': 500,
+    'basic.to_if_alone_timeout_milliseconds': 199,
+    'basic.to_delayed_action_delay_milliseconds': 200,
+    'basic.to_if_held_down_threshold_milliseconds': 200,
+  })
+  ```
 
 I moved return and backspace to the command keys, so I didn't have to reach out
 to them. It created more of a turning in feeling as I typed, creating more
@@ -112,6 +153,8 @@ minority and it's just an unusual hand anatomy that makes it so uncomfortable
 for me.
 
 ## Engrammer
+
+[![Engrammer Layout](https://raw.githubusercontent.com/sunaku/engrammer/main/layout.png)](https://github.com/sunaku/engrammer)
 
 And another thorn: I love symmetry. I was very attracted to Engram's pairing of
 the parenthesis on the center column. I thought they would be convenient there
@@ -150,6 +193,64 @@ another go via
 [@amirorin's gist](https://gist.github.com/amiorin/4c74f63fe599a1dcbd0933628df1aac9).
 
 It worked.
+
+```lisp
+(defcfg
+  input (iokit-name "Apple Internal Keyboard / Trackpad")
+  output (kext)
+  fallthrough true
+  allow-cmd false
+  )
+
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft up
+  fn   lctl lalt lmet           spc            rmet ralt left down rght
+)
+
+(defalias
+    cc (tap-hold-next-release 200 c lctl)
+    ai (tap-hold-next-release 200 i lalt)
+    me (tap-hold-next-release 200 e lmet)
+    sa (tap-hold-next-release 200 a lsft)
+    sh (tap-hold-next-release 200 h rsft)
+    mt (tap-hold-next-release 200 t rmet)
+    as (tap-hold-next-release 200 s lalt)
+    cn (tap-hold-next-release 200 n rctl)
+    nav (tap-hold 180 caps (layer-toggle navigation))
+    kp (tap-hold 180 g (layer-toggle keypad))
+    nnc (multi-tap 300 (layer-toggle keypad) 300 caps (layer-toggle navigation))
+    af #(spc \( \) spc = > spc )
+    ht #(h t t p s : / /)
+    moi #(Y o u r spc N a m e )
+)
+
+(deflayer engram_homerow_mods
+  grv  1    2    3    4    5    6    7    8    9    0    [    ]   bspc
+  tab  b    y    o    u    '    ;    l    d    w    v    z    =     \
+  @nav  @cc  @ai  @me   @sa   ,    .   @sh  @mt  @as   @cn   q    ret
+  @kp    x    j    k    -   @af  /    r    m    f     p    @ht   up
+  fn  M-spc esc bspc           spc           ret   @moi left down rght
+)
+
+(deflayer navigation
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    home pgdn  pgup end    _    _    _
+  _    _    _    _    _    _    _    left  down  up  rght    _    _
+  _    _    _    _    _    _    M-S-z M-z  M-x   M-c    M-v    _    _
+  _  _    _    _              _              _    _    _    _    _
+)
+
+(deflayer keypad
+  _    _    _    _    _    _    _    _   kp/  kp*   kp-    _    _    _
+  _    _    _    _    _    _    _   kp7  kp8  kp9   kp+    _    _    _
+  _    _    _    _    _    _    _   kp4  kp5  kp6   kprt    _    _
+  _    _    _    _    _    _    _   kp1  kp2  kp3   kprt    _    _
+  _    _    _    _              _            kp0    kp.    _    _    _
+)
+```
 
 I didn't know how bad things had been. Suddenly, there was no delay. Everything
 felt natural again. I wasn't waiting, even a tiny seemingly imperceptible amount
