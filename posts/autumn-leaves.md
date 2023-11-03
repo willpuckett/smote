@@ -77,7 +77,9 @@ implement them on my laptop. I wanted to achieve as much parity as possible as I
 went back and forth. I had managed to partially implement them by the end of
 June, and I felt close. Even though I still needed the modifier keys
 occasionally (mainly for multiple modifier key combos), I had a few that were
-starting to open up and be pretty much available for other keys. I liked using karabiner.ts. It helped me stew down a lot of repetition when I used the spread operator with the `withMapper` function:
+starting to open up and be pretty much available for other keys. I liked using
+karabiner.ts. It helped me stew down a lot of repetition when I used the spread
+operator with the `withMapper` function:
 
 ```ts
 import {
@@ -96,29 +98,29 @@ import { engram, engram_left, engram_right } from './engram.ts'
 const qhr: FromKeyParam[] = ['a', 's', 'd', 'f', 'j', 'k', 'l', ';']
 const mods = ['‹⌃', '‹⌥', '‹⌘', '‹⇧', '›⇧', '›⌘', '›⌥', '›⌃']
 
-  writeToProfile('karabiner.ts', [
-    ...(qhr.map((key, i) =>
-      simlayer(key as LayerKeyParam, mods[i])
-        .manipulators([
-          withMapper(i < 4 ? engram_right : engram_left)((k) =>
-            map(k.from).to(k.to, mods[i] as ModifierParam)
-          ),
-        ])
-    )),
+writeToProfile('karabiner.ts', [
+  ...(qhr.map((key, i) =>
+    simlayer(key as LayerKeyParam, mods[i])
+      .manipulators([
+        withMapper(i < 4 ? engram_right : engram_left)((k) =>
+          map(k.from).to(k.to, mods[i] as ModifierParam)
+        ),
+      ])
+  )),
 
-    // Engram base layer
-    rule('engram').manipulators([
-      withModifier('optionalAny')([
-        withMapper(engram)((k) => map(k.from).to(k.to)),
-      ]),
+  // Engram base layer
+  rule('engram').manipulators([
+    withModifier('optionalAny')([
+      withMapper(engram)((k) => map(k.from).to(k.to)),
     ]),
-  ], {
-    'simlayer.threshold_milliseconds': 500,
-    'basic.to_if_alone_timeout_milliseconds': 199,
-    'basic.to_delayed_action_delay_milliseconds': 200,
-    'basic.to_if_held_down_threshold_milliseconds': 200,
-  })
-  ```
+  ]),
+], {
+  'simlayer.threshold_milliseconds': 500,
+  'basic.to_if_alone_timeout_milliseconds': 199,
+  'basic.to_delayed_action_delay_milliseconds': 200,
+  'basic.to_if_held_down_threshold_milliseconds': 200,
+})
+```
 
 I moved return and backspace to the command keys, so I didn't have to reach out
 to them. It created more of a turning in feeling as I typed, creating more
