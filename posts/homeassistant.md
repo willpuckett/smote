@@ -79,15 +79,7 @@ I don't know why I've avoided it for so long. I was having two main problems:
    sooner: I was rerunning the script a second time when it failed the first,
    but old habits die hard.
 
-2. I had been using a RaspbeeII for years and I couldn't get serial working. I
-   tried using the official Radxa images to access the device tree overlays, but
-   even when I gave up adding an additional uart I couldn't get the console
-   output to stop coming out on the default one. I'd like to see vendors getting
-   hardware support merged into the main distro, rather than forming specialized
-   and rarely updated sub builds. On the plus side, it was a perfect opportunity
-   for me to flash a Xiao nRF52840 with zigpy-zboss and use it as my zigbee
-   radio which I did, only to find out that zigpy-zboss isn't working with
-   python3.11. So, I dug out an old cc2531 and bam.
+2. I had been using a RaspbeeII for years and I couldn't get serial working. Setting up the serial port for it took a lot of trial and error. I eventually resorted to adding `@reboot sudo systemctl stop serial-getty@ttyAML0.service` to my crontab to kill the login terminal service on the port. When I tried to disable the service, it would just get reenabled by the console args on the next startup, and trying to add a console=none option to the boot scripts resulted in the system not booting.
 
 Once I got everything running nicely (you can follow the install steps
 [here](https://community.home-assistant.io/t/raspberry-pi-zero-2-w/351137/39?u=willpuckett),

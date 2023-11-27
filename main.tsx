@@ -11,7 +11,7 @@ import 'prismjs/components/prism-lisp'
 
 blog({
   title: '𐡷 Smote.io 𐡸',
-  description: 'Make the Foray',
+  description: 'The Ergonomics of Compactness',
   // header: <header>Your custom header</header>,
   // section: <section>Your custom section</section>,
   // footer: <footer>Your custom footer</footer>,
