@@ -21,7 +21,7 @@ I had been using Tasmota for years. I built my blinds around it and it all seeme
 Somewhere early in the year, I ran across a TMC2209 driver for ESPHome, and I finally did my first config. It took a minute to get used to the sprawling yaml files, but I really fell in love. The build system kinda kept everything unified, and the networking was light years beyond Tasmota. I was able to start rolling custom devices like a controller for our old wall dial heater, and do a lot of work exploring StallGuard on smaller motors.
 
 Once I did, though, the Green really started to show its weaknesses. The RK3566 just couldn't do the builds very quickly.
-And given how badger-y HomeAssistant is about updates, it was annoying to have to wait for the Green to roll through several ESPHome devices, especially since "Update All" was stops working if my browser window goes to sleep.
+And given how badger-y HomeAssistant is about updates, it was annoying to have to wait for the Green to roll through several ESPHome devices, especially since "Update All" stops working if my browser window goes to sleep.
 
 ## Enter the Optiplex 5050
 
