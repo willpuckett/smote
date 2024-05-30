@@ -4,5 +4,10 @@
   "deno.lint": true,
   "editor.defaultFormatter": "denoland.vscode-deno",
   "task.allowAutomaticTasks": "on",
-  "task.autoDetect": "on"
+  "task.autoDetect": "on",
+  "cSpell.words": [
+    "Tasmota",
+    "virsh",
+    "Xiao"
+  ]
 }
