@@ -16,7 +16,7 @@ The Green worked pretty well. It was cohesive, and straightforward.
 
 ## Bye Tasmota: Finally Joining the ESPHome Cult
 
-I had been using Tasmota for years. I built my blinds around it and it all seemed pretty straightforward. I used it for ESPCam with the Xiao. I had done custom builds. I had even tried to get it working with Matter. But I was never able to get it to work with HomeAssistant for long. 
+I had been using Tasmota for years. I built my blinds around it and it all seemed pretty straightforward. I used it for ESPCam with the Xiao. I had done custom builds. I wanted to use Tasmota's Matter integration so I could ditch MQTT, but I was never able to get it to work with HomeAssistant for long. 
 
 Somewhere early in the year, I ran across a TMC2209 driver for ESPHome, and I finally did my first config. It took a minute to get used to the sprawling yaml files, but I really fell in love. The build system kinda kept everything unified, and the networking was light years beyond Tasmota. I was able to start rolling custom devices like a controller for our old wall dial heater, and do a lot of work exploring StallGuard on smaller motors.
 
