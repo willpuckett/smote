@@ -1,7 +1,7 @@
 ---
 title:  "Re-Homing Home Assistant, Again"
 tags: [ iot, sbc ]
-publish_date: 2024-5-29
+publish_date: 2024-05-29
 ---
 
 It has been 7 months since my last re-homing Home Assistant article. In the time since, I've re-homed it twice more, and it seemed worth making a few notes. At this point, it's fair to say my Home Assistant install is more of a vagabond, constantly searching for warm (but not too warm!) hardware to inhabit in the night...
