@@ -1,7 +1,7 @@
 ---
 title:  "TMCeiver"
 tags: [ 3dp, can ]
-# cover_html: <img src='images/autumn-leaves.webp'/>
+cover_html: <img src='images/tmceiver.png'/>
 publish_date: 2024-07-21
 ---
 
@@ -27,4 +27,4 @@ grep 'retransmit=' printer_data/logs/klippy.log* | grep -v 'retransmit=0 '
 
 to search for lines in klippy.log that have CAN retransmits. So far, I haven't had a single one with the TMCeiver in place. 
 
-I had to do a minimum order for the transceiver boards and I have a few extras I'll put on my etsy store [here](https://octule.etsy.com). If there's interest, I can improve the silkscreen a little and order a larger batch, which would help get the cost down. I could also make versions for other boards if they have CAN capable pins somewhere on the steppers if anyone wants to make a request. Adding a toolboard often means freeing up a stepper slot on the primary mcu, so I think this might be a pretty convenient way to handle CAN upgrades for older machines, especially if I can generalize the board so it can use any pins available to it.
+I had to do a minimum order for the transceiver boards and I have a few extras. Reach out if you'd like one to test. If there's interest, I can improve the silkscreen a little and order a larger batch, which would help get the cost down. It would be interesting to make versions for other boards if they have CAN capable pins somewhere on the steppers. Adding a toolboard often means freeing up a stepper slot on the primary mcu, so I think this might be a pretty convenient way to handle CAN upgrades for older machines, especially if I can generalize the board so it can use any pins available to it.
