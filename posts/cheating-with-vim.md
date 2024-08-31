@@ -2,7 +2,6 @@
 title:  "Cheating with Vim"
 tags: [ keebs ]
 publish_date: 2020-04-12
-
 ---
 
 Last week, I decided to have an affair with the text editor of my youth:

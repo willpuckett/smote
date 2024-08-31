@@ -1,18 +1,22 @@
 {
+  "lock": false,
   "tasks": {
     "start": "deno run --allow-net --allow-read --allow-env --watch main.tsx --dev",
-    "bg": "deno task start &> /dev/null",
-    "prep": "deno fmt && deno lint && deno check main.tsx",
+    "hooks:install": "deno run --allow-read=deno.jsonc,deno.json,.git/hooks/ --allow-write=.git/hooks/ jsr:@hongminhee/deno-task-hooks",
+    "hooks:pre-commit": "deno fmt && deno lint && deno check main.tsx",
     "udd": "deno run -A https://deno.land/x/udd/main.ts --dry-run deno.jsonc"
   },
   "imports": {
-    "deno_blog/": "https://pax.deno.dev/denoland/deno_blog/",
+    "deno_blog/": "https://pax.deno.dev/denoland/deno_blog@main/",
     "prismjs/": "https://esm.sh/prismjs@1.29.0/"
   },
   "compilerOptions": {
     "types": [
       "./types.d.ts"
-    ]
+    ],
+    "jsx": "react",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment"
   },
   "fmt": {
     "semiColons": false,

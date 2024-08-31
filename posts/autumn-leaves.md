@@ -263,7 +263,10 @@ easier to configure than karabiner or any of its generators.
 
 ### 𐡸 𐡷
 
-It's a little akward to explain, but getting things kind of fully assembled felt like a rope that I had been pulling on suddenly felt slack, *unloaded*. I felt like I didn't have to keep drilling anymore and could move on to actually typing.
+It's a little akward to explain, but getting things kind of fully assembled felt
+like a rope that I had been pulling on suddenly felt slack, _unloaded_. I felt
+like I didn't have to keep drilling anymore and could move on to actually
+typing.
 
 Overall, I've had a lot of wins from Engram. My body feels better and my
 thoughts feel more organized. Learning a new layout involves taking consious

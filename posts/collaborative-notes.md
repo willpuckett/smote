@@ -3,7 +3,6 @@ title:  "Collaborative Book Authoring"
 tags: [ ios, keebs ]
 cover_html: <img src='images/writer.webp'/>
 publish_date: 2020-02-27
-
 ---
 
 When I used to use [Atom](https://atom.io), there was a great collaborative

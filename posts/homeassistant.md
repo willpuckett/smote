@@ -79,7 +79,13 @@ I don't know why I've avoided it for so long. I was having two main problems:
    sooner: I was rerunning the script a second time when it failed the first,
    but old habits die hard.
 
-2. I had been using a RaspbeeII for years and I couldn't get serial working. Setting up the serial port for it took a lot of trial and error. I eventually resorted to adding `@reboot sudo systemctl stop serial-getty@ttyAML0.service` to my crontab to kill the login terminal service on the port. When I tried to disable the service, it would just get reenabled by the console args on the next startup, and trying to add a console=none option to the boot scripts resulted in the system not booting.
+2. I had been using a RaspbeeII for years and I couldn't get serial working.
+   Setting up the serial port for it took a lot of trial and error. I eventually
+   resorted to adding `@reboot sudo systemctl stop serial-getty@ttyAML0.service`
+   to my crontab to kill the login terminal service on the port. When I tried to
+   disable the service, it would just get reenabled by the console args on the
+   next startup, and trying to add a console=none option to the boot scripts
+   resulted in the system not booting.
 
 Once I got everything running nicely (you can follow the install steps
 [here](https://community.home-assistant.io/t/raspberry-pi-zero-2-w/351137/39?u=willpuckett),

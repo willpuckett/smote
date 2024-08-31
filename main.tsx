@@ -1,5 +1,4 @@
-/** @jsx h */
-import blog, { h } from 'deno_blog/blog.tsx'
+import blog from 'deno_blog/blog.tsx'
 
 import 'prismjs/components/prism-typescript'
 import 'prismjs/components/prism-bash'
@@ -47,7 +46,7 @@ blog({
   //   twitterCard: "summary" | "summary_large_image" | "app" | "player";
   // };
   /** The ISO code of the language the blog is in */
-  dateFormat: (d) =>
+  dateFormat: (d: Date) =>
     d.toLocaleString('en-US', {
       weekday: 'long',
       year: 'numeric',

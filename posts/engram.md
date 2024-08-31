@@ -2,7 +2,6 @@
 title: "Exploring the Engram Keyboard Layout"
 tags: [ keebs ]
 publish_date: 2023-03-25
-
 ---
 
 Exploring layouts for my new keyboard and decided to give the

@@ -3,7 +3,6 @@ title:  "MWeb: Markdown Editor"
 tags: [ ios, keebs ]
 cover_html: <img src='/images/MWeb.webp'/>
 publish_date: 2019-02-14
-
 ---
 
 A few weeks ago, I happened onto

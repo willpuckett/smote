@@ -224,10 +224,14 @@ degrees while streaming.
 
 ## Continued Downsizing
 
-Things have shaped up nicely. The Radxa Zero 2 Pro is essentially plug-and-play. I still need to find a way to have Klipper log to the ram disk and then rotate to `printer_data/logs`, but there's always *something*...
+Things have shaped up nicely. The Radxa Zero 2 Pro is essentially plug-and-play.
+I still need to find a way to have Klipper log to the ram disk and then rotate
+to `printer_data/logs`, but there's always _something_...
 
 There's a lot to love about the Radxa Zero 2. It's fast, cool running, and the
-size is great. As I transition deeper into can, I'm realizing I don't really have a need for any pins to be exposed on the sbc. To that end, I wouldn't mind if it were more the size of the Xiao, or if it at least eliminated the pin header. But
-for everything packed on board, Radxa did well on both the size and the price.
-This project also allowed me to complete my transition to Armbian... So so long
-rPiOS, and thanks for all the fishes.
+size is great. As I transition deeper into can, I'm realizing I don't really
+have a need for any pins to be exposed on the sbc. To that end, I wouldn't mind
+if it were more the size of the Xiao, or if it at least eliminated the pin
+header. But for everything packed on board, Radxa did well on both the size and
+the price. This project also allowed me to complete my transition to Armbian...
+So so long rPiOS, and thanks for all the fishes.
