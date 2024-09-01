@@ -23,7 +23,7 @@ GFM (I was outputting a book of haiku to ePub and it wasn't breaking at H1,
 maybe too short?). Here's the HTML I needed to insert to get a hard page break:
 
 ```html
-<div style="page-break-after: always;"></div>
+<div style="page-break-after: always"></div>
 ```
 
 But I would still prefer to have a simple Markdown notation for this. Yet
@@ -34,15 +34,17 @@ following code to put at the beginning of the markdown document:
 
 ```html
 <style>
-    hr {
-        page-break-before: always;
-        border-width: 0px;
-        }
-    h1 {page-break-before: always;}
-    .center {
-        text-indent: 0;
-        text-align: center;
-        }
+  hr {
+    page-break-before: always;
+    border-width: 0px;
+  }
+  h1 {
+    page-break-before: always;
+  }
+  .center {
+    text-indent: 0;
+    text-align: center;
+  }
 </style>
 ```
 
