@@ -213,3 +213,21 @@ to the VM, and update all my ESPHome devices in a fraction of the time it took
 on the Green.
 
 Stay tuned for the next eminent re-homing, inevitably just around the corner...
+
+## Until...
+
+It was all going well, until I decided it would be better to run some docker container on the Optiplex than in Rosetta on my laptop. Docker's networking broke the virsh bridge. 🙃
+
+It seemed that it needed some changes to the [routing tables](https://serverfault.com/questions/963759/docker-breaks-libvirt-bridge-network) but I never really worked it out, and just uninstalled docker and got virsh running again. 
+
+Several months later, I felt like I was just being lazy, and I took another [look](https://wiki.archlinux.org/index.php/Docker#Starting_Docker_breaks_KVM_bridged_networking). 
+
+When I created the following `/etc/docker/daemon.json` file:
+
+```json
+{
+  "bridge": "br0"
+}
+```
+
+and reinstalled docker, it all seems to work without botching anything. I've been able to run remote devcontainers on the Optiplex, and the HomeAssistant VM is still running fine and accessible on the network.
