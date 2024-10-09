@@ -1,4 +1,4 @@
-import blog from 'https://pax.deno.dev/willpuckett/deno_blog/blog.tsx'
+import blog from 'deno_blog/blog.tsx'
 
 import 'prismjs/components/prism-typescript'
 import 'prismjs/components/prism-bash'
