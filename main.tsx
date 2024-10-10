@@ -5,6 +5,7 @@ import 'prismjs/components/prism-bash'
 import 'prismjs/components/prism-clike'
 import 'prismjs/components/prism-vim'
 import 'prismjs/components/prism-lisp'
+import 'prismjs/components/prism-yaml'
 
 // import * as unocss from './unocss.ts';
 
