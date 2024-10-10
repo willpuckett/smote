@@ -2,7 +2,7 @@
 title:  "Multi-Instance Klipper with Canbus"
 tags: [ 3dp, sbc ]
 publish_date: 2024-05-02
-# cover_html: <img src="/images/rock-chip.webp" />
+cover_html: <img src="/images/multi-instance.webp" />
 ---
 
 Last fall, I had considered setting up multiple instances of Klipper on a single
