@@ -136,13 +136,13 @@ successfully outputting the variant files before Salvador’s work and bug fixes
 over the past few weeks, it seems unlikely that people have done this using
 KiCad, and it has some really useful implications for keyboard designers.
 
-If we examine for instance, the revxlp repository, there is a ‘10u’ and a 12u’
+If we examine for instance, the [revxlp repository](https://gitlab.com/lpgalaxy/revxlp), there is a ‘10u’ and a 12u’
 directory, both of which contain 3 different pcb files: a main pcb for
 components and switches, a top plate, and a bottom plate. With KiBot’s support
 of production variants, those could all be generated from the single 12u pcb
 file, using ‘var_rename’ to switch the board outline footprint to the 10u
 version, depopulate the unneeded components for the top and bottom plates, and
-replace the key switch footprint with the cutout version for the top plate.
+replace the key switch footprint with the cutout version for the top plate. See this [demonstration repository](https://github.com/willpuckett/revxlp), which implements the concept. It's notable that being able to execute a global deletion of tracks and vias, or some other method to clean up the top and bottom plates would be nice. Using footprint replacement can even allow for switching graphic artwork on top and bottom plates as well, for those so inclined.
 
 Using this sort of KiBot build matrix has made an iterative design
 approach more comfortable for me. I feel like I can focus my time
