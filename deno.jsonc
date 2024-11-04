@@ -7,7 +7,7 @@
     "udd": "deno -A https://deno.land/x/udd/main.ts --dry-run deno.jsonc"
   },
   "imports": {
-    "deno_blog/": "https://pax.deno.dev/willpuckett/deno_blog@main/",
+    "deno_blog/": "https://pax.deno.dev/denoland/deno_blog/",
     "prismjs/": "https://esm.sh/prismjs@1.29.0/"
   },
   "compilerOptions": {
@@ -21,11 +21,5 @@
   "fmt": {
     "semiColons": false,
     "singleQuote": true
-  },
-  "unstable": [
-    // "fmt-html",
-    // "fmt-css",
-    // "fmt-yaml",
-    // "fmt-component"
-  ]
+  }
 }
