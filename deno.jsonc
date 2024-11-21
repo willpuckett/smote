@@ -7,13 +7,12 @@
     "udd": "deno -A https://deno.land/x/udd/main.ts --dry-run deno.jsonc"
   },
   "imports": {
+    // "@preact-icons/tb": "jsr:@preact-icons/tb@^1.0.12",
     "deno_blog/": "https://pax.deno.dev/denoland/deno_blog/",
+    "icons/": "https://deno.land/x/tabler_icons_tsx@0.0.7/tsx/",
     "prismjs/": "https://esm.sh/prismjs@1.29.0/"
   },
   "compilerOptions": {
-    // "types": [
-    //   "./types.d.ts"
-    // ],
     "jsx": "react",
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment"

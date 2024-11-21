@@ -38,8 +38,9 @@ spend way to much time doing anyway.
 I used MCP2542FD SOP in my first revision, but there weren't a ton of them in
 stock on lcsc and I wanted to use a smaller package, so I switched to a Texas
 Instruments TCAN transceiver in a SON package which had the additional benefit
-of also being slightly cheaper
-[download schematic](/static/Schematic_TMCeiver.pdf).
+of also being slightly cheaper.
+
+![download schematic](https://pax.deno.dev/willpuckett/tmceiver@main/images/schematic.svg)
 
 The TMCeiver is CAN FD capable, in the event that Klipper adds CAN FD support at
 some point in the future.
@@ -53,11 +54,11 @@ grep 'retransmit=' printer_data/logs/klippy.log* | grep -v 'retransmit=0 '
 to search for lines in klippy.log that have CAN retransmits. So far, I haven't
 had a single one with the TMCeiver in place.
 
-I had to do a minimum order for the transceiver boards and I have a few extras.
-Reach out if you'd like one to test. If there's interest, I can improve the
-silkscreen a little and order a larger batch, which would help get the cost
-down. It would be interesting to make versions for other boards if they have CAN
-capable pins somewhere on the steppers. Adding a toolboard often means freeing
-up a stepper slot on the primary mcu, so I think this might be a pretty
-convenient way to handle CAN upgrades for older machines, especially if I can
-generalize the board so it can use any pins available to it.
+I had to do a minimum order for the transceiver boards and I have a few
+[extras](https://octule.com). If there's interest, I can improve the silkscreen
+a little and order a larger batch, which would help get the cost down. It would
+be interesting to make versions for other boards if they have CAN capable pins
+somewhere on the steppers. Adding a toolboard often means freeing up a stepper
+slot on the primary mcu, so I think this might be a pretty convenient way to
+handle CAN upgrades for older machines, especially if I can generalize the board
+so it can use any pins available to it.
