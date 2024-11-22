@@ -103,6 +103,25 @@ const IconRss = () => (
   </svg>
 )
 
+const IconBrandPrintables = () => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    stroke='currentColor'
+    stroke-width='2'
+    stroke-linecap='round'
+    stroke-linejoin='round'
+    class='h-6 w-6 hover:text-gray-600 hover:dark:text-gray-400 text-gray-900 dark:text-gray-100 transition-colors'
+  >
+    <path
+      d='m 3.507371,19.018348 c 0,-2.628827 0.048066,-4.779688 0.1068732,-4.779688 0.1324549,0 0.8713185,0.414307 4.3590898,2.444287 1.5117538,0.879887 2.968953,1.717695 3.238217,1.861801 l 0.489573,0.262013 V 14.158007 9.5092579 L 7.6042477,7.1829296 C 2.6762276,4.3846465 2.6814406,4.9709516 7.5599887,2.2007788 12.41598,-0.55659977 11.233758,-0.56312251 16.13943,2.2480704 l 4.096876,2.3477362 v 4.8672443 4.8672431 l -7.283337,4.179912 c -9.228057,5.295984 -9.213605,5.287803 -9.3398471,5.287803 -0.058131,0 -0.1057246,-2.15086 -0.1057246,-4.779687 z'
+    />
+  </svg>
+)
+
 export const Footer = (
   <footer class='text-gray-600 dark:text-gray-400'>
     <div class='max-w-6xl mx-auto px-4 py-10 md:py-16'>
@@ -224,6 +243,14 @@ export const Footer = (
             aria-label='GitHub'
           >
             <IconBrandGithub />
+          </a>
+          <a
+            href='https://www.printables.com/@willpuckett_1604992'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='Printables'
+          >
+            <IconBrandPrintables />
           </a>
 
           {
