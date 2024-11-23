@@ -245,7 +245,7 @@ export const Footer = (
             <IconBrandGithub />
           </a>
           <a
-            href='https://www.printables.com/@willpuckett_1604992'
+            href='https://www.printables.com/@willpuckett'
             target='_blank'
             rel='noopener noreferrer'
             aria-label='Printables'
