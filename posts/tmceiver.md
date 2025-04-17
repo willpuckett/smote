@@ -40,7 +40,7 @@ stock on lcsc and I wanted to use a smaller package, so I switched to a Texas
 Instruments TCAN transceiver in a SON package which had the additional benefit
 of also being slightly cheaper.
 
-![download schematic](https://pax.deno.dev/willpuckett/tmceiver@main/images/schematic.svg)
+![download schematic](https://pax.deno.dev/willpuckett/tmceiver@main/.images/schematic.svg)
 
 The TMCeiver is CAN FD capable, in the event that Klipper adds CAN FD support at
 some point in the future.

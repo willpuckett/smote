@@ -58,6 +58,25 @@ const IconBrandGithub = () => (
   </svg>
 )
 
+const IconBrandMastadon = () => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    stroke='currentColor'
+    stroke-width='2'
+    stroke-linecap='round'
+    stroke-linejoin='round'
+    class='h-6 w-6 hover:text-gray-600 hover:dark:text-gray-400 text-gray-900 dark:text-gray-100 transition-colors'
+  >
+    <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+    <path d='M18.648 15.254c-1.816 1.763 -6.648 1.626 -6.648 1.626a18.262 18.262 0 0 1 -3.288 -.256c1.127 1.985 4.12 2.81 8.982 2.475c-1.945 2.013 -13.598 5.257 -13.668 -7.636l-.026 -1.154c0 -3.036 .023 -4.115 1.352 -5.633c1.671 -1.91 6.648 -1.666 6.648 -1.666s4.977 -.243 6.648 1.667c1.329 1.518 1.352 2.597 1.352 5.633s-.456 4.074 -1.352 4.944z' />
+    <path d='M12 11.204v-2.926c0 -1.258 -.895 -2.278 -2 -2.278s-2 1.02 -2 2.278v4.722m4 -4.722c0 -1.258 .895 -2.278 2 -2.278s2 1.02 2 2.278v4.722' />
+  </svg>
+)
+
 // const IconBrandTwitter = () => (
 //   <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="h-6 w-6 hover:text-gray-600 hover:dark:text-gray-400 text-gray-900 dark:text-gray-100 transition-colors"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>)
 
@@ -116,9 +135,7 @@ const IconBrandPrintables = () => (
     stroke-linejoin='round'
     class='h-6 w-6 hover:text-gray-600 hover:dark:text-gray-400 text-gray-900 dark:text-gray-100 transition-colors'
   >
-    <path
-      d='m 3.507371,19.018348 c 0,-2.628827 0.048066,-4.779688 0.1068732,-4.779688 0.1324549,0 0.8713185,0.414307 4.3590898,2.444287 1.5117538,0.879887 2.968953,1.717695 3.238217,1.861801 l 0.489573,0.262013 V 14.158007 9.5092579 L 7.6042477,7.1829296 C 2.6762276,4.3846465 2.6814406,4.9709516 7.5599887,2.2007788 12.41598,-0.55659977 11.233758,-0.56312251 16.13943,2.2480704 l 4.096876,2.3477362 v 4.8672443 4.8672431 l -7.283337,4.179912 c -9.228057,5.295984 -9.213605,5.287803 -9.3398471,5.287803 -0.058131,0 -0.1057246,-2.15086 -0.1057246,-4.779687 z'
-    />
+    <path d='m 3.507371,19.018348 c 0,-2.628827 0.048066,-4.779688 0.1068732,-4.779688 0.1324549,0 0.8713185,0.414307 4.3590898,2.444287 1.5117538,0.879887 2.968953,1.717695 3.238217,1.861801 l 0.489573,0.262013 V 14.158007 9.5092579 L 7.6042477,7.1829296 C 2.6762276,4.3846465 2.6814406,4.9709516 7.5599887,2.2007788 12.41598,-0.55659977 11.233758,-0.56312251 16.13943,2.2480704 l 4.096876,2.3477362 v 4.8672443 4.8672431 l -7.283337,4.179912 c -9.228057,5.295984 -9.213605,5.287803 -9.3398471,5.287803 -0.058131,0 -0.1057246,-2.15086 -0.1057246,-4.779687 z' />
   </svg>
 )
 
@@ -251,6 +268,14 @@ export const Footer = (
             aria-label='Printables'
           >
             <IconBrandPrintables />
+          </a>
+          <a
+            href='https://mastadon.social/@willpuckett'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='Mastadon'
+          >
+            <IconBrandMastadon />
           </a>
 
           {
