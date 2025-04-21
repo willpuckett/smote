@@ -58,7 +58,7 @@ const IconBrandGithub = () => (
   </svg>
 )
 
-const IconBrandMastadon = () => (
+const IconBrandMastodon = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='24'
@@ -270,12 +270,12 @@ export const Footer = (
             <IconBrandPrintables />
           </a>
           <a
-            href='https://mastadon.social/@willpuckett'
+            href='https://mastodon.social/@willpuckett'
             target='_blank'
             rel='noopener noreferrer'
-            aria-label='Mastadon'
+            aria-label='Mastodon'
           >
-            <IconBrandMastadon />
+            <IconBrandMastodon />
           </a>
 
           {
