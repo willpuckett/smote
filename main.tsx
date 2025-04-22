@@ -13,7 +13,7 @@ import 'prismjs/components/prism-json'
 
 blog({
   title: 'smote.io',
-  description: '𐡷 Yes, but smaller. 𐡸',
+  description: '𐡷 How do you know where home is? 𐡸',
   showHeaderOnPostPage: true, // by default, the header will only show on home, set showHeaderOnPostPage to true to make it show on each post page
   footer: Footer,
   avatar: '/images/avatar.webp',

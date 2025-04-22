@@ -152,7 +152,7 @@ export const Footer = (
             </span>
           </a>
           <p class='text-sm'>
-            <em>𐡷 Yes, but smaller. 𐡸</em>
+            <em>𐡷 How do you know where home is? 𐡸</em>
           </p>
         </div>
 
