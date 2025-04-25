@@ -34,7 +34,8 @@ wireless adapter and connected the Dell in the closet under my router.
 I went through a very normal install of Klipper using Kiauh, and selected 4
 instances. Kiauh handled everything automatically for me.
 
-CAVEAT: When building Klipper for the bridge device, `USB ids > [x] USB serial number from CHIPID` __must__ be checked.
+CAVEAT: When building Klipper for the bridge device,
+`USB ids > [x] USB serial number from CHIPID` **must** be checked.
 
 ## Setting Up Canbus with Udev
 

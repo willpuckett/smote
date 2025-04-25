@@ -9,7 +9,7 @@ This is 28BYJ-48.
 
 ![28BYJ-48 shot](/images/28byj48.webp)
 
-It can be purchased for 61¢ on aliexpress, and probably less in quantity. It is
+It can be purchased for 61¢ on aliexpress, probably less in quantity. It is
 small and features a 1:64 gear reduction utilizing 5 tiny plastic gears. By all
 accounts, it is a cheap, unexceptional motor.
 
@@ -54,10 +54,12 @@ home automation community. I was very interested in using StallGuard endstops in
 my Cover applications. It seemed like such a natural pairing.
 
 So it was a relief in 2023 when I found
-[this gist](https://gist.github.com/lumascet/a5c48c3dc1ceab02f714735f8811b1caf)
+[this gist](https://gist.github.com/lumascet/a5c48c3dc1ceab02f714735f8811b1ca)
 outlining UART control of TMC2209. Until that time, steppers in the DIY home
 automation community were controlled only through STEP/DIR interfaces, which
 couldn't configure the more advanced features of newer drivers.
+
+![testing small breadboard](/images/breadboard_small.webp)
 
 Grabbing a breadboard, I wired up a stepstick, Xiao, and 28BYJ-48. Tuning
 StallGuard always involves _some_ back and forth to get a motor working well in
@@ -65,11 +67,11 @@ its designed application, but no matter how hard I tried, I couldn't get 2209 to
 reliably detect stalls on the tiny motors. As I read and reread the datasheet,
 it became more and more clear to me that I needed to resize the sense resistors.
 I recall running across notes indicating that StallGuard measurments could
-become unreliable or just not possible at low drive currents. It seemed the back
-emf current I was trying to measure was not a substantial enough portion of the
-range the boards were designed for and there wasn't enough signal.
+become unreliable or just not possible at low drive currents. I gathered the
+back emf current I was trying to measure was not a substantial enough portion of
+the range the boards were designed for and there wasn't enough signal.
 
-## 
+![🚦 StopLight Schematic](https://raw.githubusercontent.com/willpuckett/stoplight/refs/heads/main/.images/stoplight.svg)
 
 Seasons passed. I had hoped to work out stall sensing with 28BYJ-48 by winter,
 if it was even possible, when I planned to use it to control our
@@ -78,28 +80,88 @@ Although I was uncertain if larger sense resistors would allow a stall
 measurement, I had to try and eventually drafted the first revison of
 [🚦 StopLight](https://github.com/willpuckett/stoplight). I landed on a very
 minimal approach to the board, opting to access most features over UART, made
-possible by this
+possible by @slimcdk's
 [incredible TMC2209 implementation](https://github.com/slimcdk/esphome-custom-components),
 which also allowed me to experiment with IPG (integrated pulse generation),
 meaning I didn't need to bother wiring the STEP/DIR interface at all.
 
-![🚦 StopLight Schematic](https://raw.githubusercontent.com/willpuckett/stoplight/refs/heads/main/.images/stoplight.svg)
+![StopLight board](/images/stoplight.webp)
 
-There are often cautionary words spoken when it comes to StallGuard and geared
-steppers. For good reason: repeatedly ramming a gear train to a sudden stop from
-full speed can be damaging. The perceived fragility of the plastic gears *may* be
-advantageous in absorbing some of the shock? It's possible that the gearing may
-turn out to be a problem, but by the same token, I've run the steppers in stall
-conditions for longer durations as part of the their normal homing operation for many
-years with no adverse effects.
+The boards arrived and StallGuard is working reliably with 28BYJ-48. There are
+often cautionary words spoken when it comes to StallGuard and geared steppers.
+For good reason: repeatedly ramming a gear train to a sudden stop from full
+speed can be damaging. Though the plastic gears _may_ absorb some of the shock,
+it's possible that the gearing may turn out to be a problem. In practice,
+however, I've run the steppers in stall conditions for longer durations as part
+of the their normal homing operation for many years with no adverse effects. I
+found the following settings successful at homing 28BYJ-48:
 
-The boards arrived and StallGuard is working reliably with 28BYJ-48. The
-[first batch](https://octule.com/listing/1891073906/stoplight) is intended more
-as a POC, but I'm excited to move forward with a few improvements to make it
-more robust. I included a PD Controller (HUSB238), so the boards can raise the
-voltage before moving the stepper, then return to 5v for idle, which helps keep
-the onboard temp sensor (dallas DS18B20) reading more accurate. I hope this
+| Key          | Value           |
+| ------------ | --------------- |
+| microsteps   | 1               |
+| vsense       | true            |
+| current      | 122 ma ~ 140 ma |
+| tcool        | 104             |
+| sgthrs       | 23 ~ 43         |
+| acceleration | 1000 steps/s    |
+| speed        | 480 steps/s     |
+
+The [first batch](https://octule.com/listing/1891073906/stoplight) is intended
+more as a POC, but I'm excited to move forward with a few improvements to make
+it more robust. I included a PD Controller (HUSB238), so the boards can raise
+the voltage before moving the stepper, then return to 5v for idle, which helps
+keep the onboard temp sensor (dallas DS18B20) reading more accurate. I hope this
 cheap, easy way to move and home a large variety of household elements can make
 automated daylighting more accessible. If the average home has 15 windows,
 🚦StopLight could result in over $2,000 of savings compared to the other smart
 window shades.
+
+## Revisitation
+
+Things were going well. So well, in fact, that I began to wonder if I had been
+hasty in my pronouncement that smaller sense resistors were strictly necessary.
+I pulled back out the breadboard and configured the BTT stepstick to use
+VSENSE... Using @slimcdk's component, I was able to reliably home with IRUN set
+to 4 and 5. I did confirm that I needed to pull ENN to GND for UART to
+communicate.
+
+### Using VSENSE
+
+| IRUN | ma  |
+| ---- | --- |
+| 1    | 61  |
+| 2    | 91  |
+| 3    | 122 |
+| 4    | 152 |
+| 5    | 183 |
+
+### Without VSENSE
+
+I then decided to try homing without VSENSE, which also worked at IRUN 1 and 2
+(I didn't try 3 since that's getting into motor frying territory).
+
+| IRUN | ma  |
+| ---- | --- |
+| 1    | 110 |
+| 2    | 165 |
+| 3    | 220 |
+
+Having the larger sense resistors is still nice: they provide more granularity
+for current selection. They may also have been a little more forgiving in terms
+of stall detection, making it easier to hone in on working settings...
+
+I'm not sure if the older implementation I was using had an issue, or if I was
+executing something incorrectly. Reviewing some of the
+[older config](https://github.com/willpuckett/homeassistant/blob/38ccfee0bda9263d6cda2358f977e30c2166889e/esphome/heater.yaml),
+it seems to be microstepping at 8 microsteps when compared to my current step
+count, although it's set at 16 microsteps in the configuration....
+
+![reworked breadboard](/images/blindandbreadboard.webp)
+
+Reworking the old blinds breadboard to use the IPG, I got a lot of voltage drop
+especially on the 3v3 rail. This had happened before, but was worse on the
+larger breadboard. I had to drop UART to 230,400 baud. Everything is working
+nicely with the 0.110 Ω sense resistors in VSENSE mode. I'm still glad I took
+the time to explore making a dedicted board: it's quite a bit easier to setup,
+and is more stable in physically demanding conditions. Now I just need to find
+some more things to move...
