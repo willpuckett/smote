@@ -106,6 +106,9 @@ found the following settings successful at homing 28BYJ-48:
 | acceleration | 1000 steps/s    |
 | speed        | 480 steps/s     |
 
+I'd like to work further with these numbers in the hopes of finding something
+effective at lower speeds.
+
 The [first batch](https://octule.com/listing/1891073906/stoplight) is intended
 more as a POC, but I'm excited to move forward with a few improvements to make
 it more robust. I included a PD Controller (HUSB238), so the boards can raise
@@ -154,7 +157,7 @@ I'm not sure if the older implementation I was using had an issue, or if I was
 executing something incorrectly. Reviewing some of the
 [older config](https://github.com/willpuckett/homeassistant/blob/38ccfee0bda9263d6cda2358f977e30c2166889e/esphome/heater.yaml),
 it seems to be microstepping at 8 microsteps when compared to my current step
-count, although it's set at 16 microsteps in the configuration....
+count, although it's set at 16 microsteps in the configuration.... 
 
 ![reworked breadboard](/images/blindandbreadboard.webp)
 
