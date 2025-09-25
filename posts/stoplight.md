@@ -1,7 +1,7 @@
 ---
 title:  "My Cover Journey"
 tags: [ iot ]
-publish_date: 2025-4-21
+publish_date: 2025-04-21
 cover_html: <img src="/images/cover.webp" />
 ---
 
