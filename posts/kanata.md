@@ -5,11 +5,11 @@ publish_date: 2025-9-25
 cover_html: <img src='images/Z1CY000KSLLA.webp'/>
 ---
 
-I've been using [Kanata](https://github.com/jtroo/kanata) for a few months now... I switched to it from [KMonad](https://github.com/kmonad/kmonad) when I changed computers earlier this year. I expected the two packages to be fairly similar, which has been largely the case, until this morning, when I finally read some documentation and worked through a more complete implementation of my keymap. That, and of course Kanata is way cooler since it's written in Rust. 🦀
+I've been using [Kanata](https://github.com/jtroo/kanata) for a few months now... I switched to it from [KMonad](https://github.com/kmonad/kmonad) when I changed computers earlier this year. I expected the two packages to be fairly similar—which has been largely the case—until this morning, when I finally read some documentation and worked through a more complete implementation of my keymap. That, and of course Kanata is way cooler since it's written in Rust. 🦀
 
 ## Installing
 
-Installing Kanata proved to be much easier—it's packaged in [homebrew](https://brew.sh) and can be installed with a simple `brew install kanata`. I had been forced to build kmonad and don't work in Haskell, so prebuilt binaries was a welcome change. 
+Installing Kanata proved to be much easier—it's packaged in [homebrew](https://brew.sh) and can be installed with a simple `brew install kanata`. I had been forced to build kmonad and don't work in Haskell, so having a prebuilt binary was a welcomed change. 
 
 After installation, I created the following `lanuchctl` job:
 
@@ -46,7 +46,7 @@ I probably had to do a security-authorizy thing somewhere along the way... A pro
 
 I started out with Kanata's [home-row-mod-advanced.kbd](https://github.com/jtroo/kanata/blob/9c5ccb762fb37106305ca2f3702daa0f3267fcb1/cfg_samples/home-row-mod-advanced.kbd#L22) example. It did a great job of getting me going with home row mods that felt pretty good. 
 
-Unfortunately, I didn't understand that the `tap-hold-release-keys` key list needed to be a list of unmodified keys. Correcting that helped a bunch. I also needed a few/50 extra milliseconds on my timings.
+Unfortunately, I didn't understand that the `tap-hold-release-keys` key list needed to be a list of unmodified (defsrc) keys. Correcting that helped a bunch. I also needed a few/50 extra milliseconds on my timings.
 
 I didn't want Kanata to modify input from my mech board, so I filtered the devices to only modify the internal keyboard:
 
@@ -56,7 +56,7 @@ I didn't want Kanata to modify input from my mech board, so I filtered the devic
   )
   ```
 
-  I anticipate reworking my internal board before I got my laptop, so I opted for the ISO keyboard model to have a better feeling left pinky key. I wasn't able to find an ISO defsrc example keyboard with the key named, however, after some searching, I was able to find [a thread](https://github.com/jtroo/kanata/discussions/1066) which refers to the 102nd key as `lsgt`, or just `102d`.
+  I anticipated reworking my internal board before I got my laptop, so I opted for the ISO keyboard model to have a better feeling left pinky key. I wasn't able to find an ISO defsrc example keyboard with the extra key named. However, after some searching, I located [a thread](https://github.com/jtroo/kanata/discussions/1066) which refers to the 102nd key as `lsgt`, or just `102d`.
 
 ## Combos
 
