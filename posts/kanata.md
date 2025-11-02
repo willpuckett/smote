@@ -1,7 +1,7 @@
 ---
 title: "No User Serviceable Keys Inside: How to Void Your Warranty One Cap at a Time"
 tags: [ keebs ]
-publish_date: 2025-9-25
+publish_date: 2025-09-25
 cover_html: <img src='images/Z1CY000KSLLA.webp'/>
 ---
 
