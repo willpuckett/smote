@@ -8,7 +8,7 @@
   },
   "imports": {
     // "@preact-icons/tb": "jsr:@preact-icons/tb@^1.0.12",
-    "deno_blog/": "https://pax.deno.dev/denoland/deno_blog/",
+    "deno_blog/": "https://pax.deno.dev/denoland/deno_blog@589c4750d001ae2a4e921385be558d97060e3933/",
     "icons/": "https://deno.land/x/tabler_icons_tsx@0.0.7/tsx/",
     "prismjs/": "https://esm.sh/prismjs@1.30.0/"
   },
