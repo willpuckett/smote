@@ -1,0 +1,162 @@
+  ;; Home row mods QWERTY example with more complexity.
+;; Some of the changes from the basic example:
+;; - when a home row mod activates tap, the home row mods are disabled
+;;   while continuing to type rapidly
+;; - tap-hold-release helps make the hold action more responsive
+;; - pressing another key on the same half of the keyboard
+;;   as the home row mod will activate an early tap action
+
+(defcfg
+  process-unmapped-keys yes
+  block-unmapped-keys yes
+  macos-dev-names-include (
+    "Apple Internal Keyboard / Trackpad"
+  )
+    concurrent-tap-hold yes
+    chords-v2-min-idle 20
+)
+(defsrc
+  lsgt 1 2 3 4 5 6 7 8 9 0 - = 
+  q w e r t y u i o p [ ]
+  caps a s d f g h j k l ; ' \
+  lsft ` z x c v b n m , . / rsft
+    lmet spc rmet ralt ← ↑ ↓ →
+)
+(defvar
+  ;; Note: consider using different time values for your different fingers.
+  ;; For example, your pinkies might be slower to release keys and index
+  ;; fingers faster.
+  tap-time 200
+  tap-time-pinky 250
+  hold-time 150
+  hold-time-pinky 200
+  short-chord 25
+  long-chord 50
+
+  left-hand-keys (
+    lsgt 1 2 3 4 5 6
+    q w e r t y
+    caps a s d f g
+    lsft ` z x c v b
+    lmet spc 
+  )
+  right-hand-keys (
+    7 8 9 0 - =
+    u i o p [ ]
+    h j k l ; ' \
+    n m , . / rsft
+    rmet ralt 
+  )
+)
+
+;; (deflayer contains-no-ops
+  ;; XX ✗ ∅ •)
+
+(deflayer base
+  [    1 2 3 4 5 6 7 8 9 0 ] /
+  • b y o u ' F21 d n g v q
+  caps    @h @i @a @e , • . @t @r @s @c z
+  lsft    k j x w - F23 F24 F22 m l f p
+    @bfun @snn e    ret  ← ↑ ↓ →
+)
+
+(deflayer nomods
+  [    1 2 3 4 5 6 7 8 9 0 ] /
+  • b y o u ' F21 d n g v q
+  caps    h i a e , • . t r s c z
+  lsft    k j x w - F23 F24 F22 m l f p
+    bspc spc e    ret  ← ↑ ↓ →
+)
+
+(deflayer nn
+  •    • • • • • • • • • • • •
+  • kprt kp7 kp8 kp9 • • vold mute volu • •
+  •    kp0 kp4 kp5 kp6 • • • left down up right •
+  •    kp. kp1 kp2 kp3 • • • • home pgdn pgup end
+    bspc •   •    •    ← ↑ ↓ →
+)
+
+(deflayer fun
+  •    • • • • • • • • • • • •
+  • f12 f7 f8 f9 • • • • • • •
+  •    f11 f4 f5 f6 • • • • • • • •
+  •    f10 f1 f2 f3 • • • • • • • •
+    •    •   •    •    ← ↑ ↓ →
+)
+
+(defoverrides
+  (lsft 1) (lsft \)
+  (rsft 1) (rsft \)
+  (lsft 2) (=)
+  (rsft 2) (=)
+  (lsft 3) (lsft `)
+  (rsft 3) (rsft `)
+  (lsft 4) (lsft =)
+  (rsft 4) (rsft =)
+  (lsft 5) (lsft ,)
+  (rsft 5) (rsft ,)
+  (lsft 6) (lsft .)
+  (rsft 6) (rsft .)
+  (lsft 7) (lsft 6)
+  (rsft 7) (rsft 6)
+  (lsft 8) (lsft 7)
+  (rsft 8) (rsft 7)
+  (lsft 9) (lsft 5)
+  (rsft 9) (rsft 5)
+  (lsft 0) (lsft 8)
+  (rsft 0) (rsft 8)
+  (lsft /) (\)
+  (rsft /) (\)
+  (lsft ') (lsft 9)
+  (rsft ') (rsft 9)
+  (lsft ,) (;)
+  (rsft ,) (;)
+  (lsft .) (lsft ;)
+  (rsft .) (rsft ;)
+  (F21) (lsft ')
+  (lsft F21) (lsft 0)
+  (rsft F21) (rsft 0)
+  (F22) (rsft /)
+  (lsft F22) (lsft 1)
+  (rsft F22) (rsft 1)
+  (F23) (lsft 3)
+  (lsft F23) (lsft 4)
+  (rsft F23) (rsft 4)
+  (F24) (rsft 2)
+  (lsft F24) (`)
+  (rsft F24) (`)
+)
+
+(deffakekeys
+  to-base (layer-switch base)
+)
+(defalias
+  tap (multi
+    (layer-switch nomods)
+    (on-idle-fakekey to-base tap 20)
+  )
+  
+  ss (one-shot 2000 lsft)
+  cw (caps-word-toggle 5000)
+
+  snn (tap-hold $tap-time $hold-time spc (layer-while-held nn)) ;; tap: space hold: numbers layer
+  bfun (tap-hold $tap-time $hold-time bspc (layer-while-held fun)) ;; tap: bspc hold: function layer
+
+
+  h (tap-hold-release-keys $tap-time-pinky $hold-time-pinky (multi h @tap) lctl $left-hand-keys)
+  i (tap-hold-release-keys $tap-time-pinky $hold-time-pinky (multi i @tap) lalt $left-hand-keys)
+  e (tap-hold-release-keys $tap-time-pinky $hold-time-pinky (multi e @tap) lmet $left-hand-keys)
+  a (tap-hold-release-keys $tap-time-pinky $hold-time-pinky (multi a @tap) lsft $left-hand-keys)
+  t (tap-hold-release-keys $tap-time-pinky $hold-time-pinky (multi t @tap) rsft $right-hand-keys)
+  r (tap-hold-release-keys $tap-time-pinky $hold-time-pinky (multi r @tap) rmet $right-hand-keys)
+  c (tap-hold-release-keys $tap-time-pinky $hold-time-pinky (multi c @tap) ralt $right-hand-keys)
+  s (tap-hold-release-keys $tap-time-pinky $hold-time-pinky (multi s @tap) lctl $right-hand-keys)
+)
+
+(defchordsv2
+    (a `) M-z $long-chord all-released (nn fun)
+    (z s) M-x $long-chord all-released (nn fun)
+    (x d) M-c $long-chord all-released (nn fun)
+    (c f) M-v $long-chord all-released (nn fun)
+)
+

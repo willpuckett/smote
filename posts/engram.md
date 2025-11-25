@@ -1,24 +1,19 @@
 ---
-title: "Exploring the Engram Keyboard Layout"
-tags: [ keebs ]
+title: 'Exploring the Engram Keyboard Layout'
+tags: [keebs]
 publish_date: 2023-03-25
 ---
 
 Exploring layouts for my new keyboard and decided to give the
-[Engram Layout](https://engram.dev) by Arno Klein a go.
+[Engram Layout](https://engram-layouts.xyz) by Arno Klein a go.
 
-## Using Karabiner
+## Using Kanata
 
-The Keyman App reccommended on the Engram website doesn't work with newer
-versions of MacOS, so I threw together a keymap for
-[Karabiner](https://karabiner-elements.pqrs.org). You can try it out by either
-opening it
-[directly in Karabiner](https://esm.sh/gh/willpuckett/engram/install/mac/karabiner/install_engram.html),
-or viewing the JSON
-[here](https://raw.githubusercontent.com/binarybottle/engram/master/install/mac/karabiner/engram.json)
-( you'll need to place the json file in
-`~/.config/karabiner/assets/complex_modifications/` and maybe restart
-Karabiner).
+I used Karabiner and KMonad for a while, but Kanata seems to be the most
+effective tool in MacOS these days.
+
+Install with `brew install kanata`. Then you can use this
+[engram.kbd](/static/engram.kbd).
 
 ### ⁂
 

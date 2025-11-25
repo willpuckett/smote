@@ -25,10 +25,10 @@ to create another board more fully tailored to my hand anatomy,
 
 ![sessile](https://raw.githubusercontent.com/willpuckett/sessile/refs/heads/main/.images/render.webp)
 
-I hadn't anticipated moving away from [Engram](https://engram.dev) during this
-process, but it wasn't fitting well, especially in the 26 key period, and I
-couldn't shake the queasy feeling I was getting in my left pinky with it. I
-spent a month or so with
+I hadn't anticipated moving away from [Engram](https://engram-layouts.xyz)
+during this process, but it wasn't fitting well, especially in the 26 key
+period, and I couldn't shake the queasy feeling I was getting in my left pinky
+with it. I spent a month or so with
 [Nordrassil](https://github.com/empressabyss/nordrassil), which seemed
 artistically the perfect fit for a keyboard shaped like a leaf, but ultimately
 landed on whispy variant of
